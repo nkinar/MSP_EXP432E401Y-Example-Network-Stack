@@ -1,0 +1,2282 @@
+******************************************************************************
+                  TI ARM Linker PC v20.2.4                     
+******************************************************************************
+>> Linked Mon Jun 21 18:38:34 2021
+
+OUTPUT FILE NAME:   <MSP_EXP432E401Y_freertos_ccs.out>
+ENTRY POINT SYMBOL: "resetISR"  address: 00014099
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH                 00000000   00100000  00014f12  000eb0ee  R  X
+  SRAM                  20000000   00040000  00031c28  0000e3d8  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+00000000    00000000    00014f18   00014f18    r-x
+  00000000    00000000    00000200   00000200    r-- .intvecs
+  00000200    00000200    0001432a   0001432a    r-x .text
+  0001452c    0001452c    00000890   00000890    r-- .const
+  00014dc0    00014dc0    00000158   00000158    r-- .cinit
+20000000    20000000    00031828   00000000    rw-
+  20000000    20000000    0000026c   00000000    rw- .vtable
+  2000026c    2000026c    00030b00   00000000    rw- .bss
+  20030d6c    20030d6c    00000abc   00000000    rw- .data
+2003fc00    2003fc00    00000400   00000000    rw-
+  2003fc00    2003fc00    00000400   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.intvecs   0    00000000    00000200     
+                  00000000    00000200     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : startup_msp432e4_ccs.obj (.intvecs:retain)
+
+.text      0    00000200    0001432a     
+                  00000200    00000a4e     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:__TI_printfi)
+                  00000c4e    00000002     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:UARTMSP432E4_init)
+                  00000c50    0000058e     FreeRTOS_DNS.obj (.text:prvParseDNSReply)
+                  000011de    00000002     msp432e4_driverlib.a : interrupt.o (.text:_IntDefaultHandler)
+                  000011e0    000003fe     FreeRTOS_DHCP.obj (.text:vDHCPProcess)
+                  000015de    00000002     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : startup_msp432e4_ccs.obj (.text:busFaultHandler)
+                  000015e0    0000035e     FreeRTOS_TCP_IP.obj (.text:prvTCPReturnPacket)
+                  0000193e    00000002     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : startup_msp432e4_ccs.obj (.text:defaultHandler)
+                  00001940    0000033c     FreeRTOS_TCP_IP.obj (.text:xProcessReceivedTCPPacket)
+                  00001c7c    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  00001c80    0000031e     FreeRTOS_Sockets.obj (.text:FreeRTOS_setsockopt)
+                  00001f9e    00000002     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : startup_msp432e4_ccs.obj (.text:faultISR)
+                  00001fa0    000002f6     FreeRTOS_DNS.obj (.text:prvTreatNBNS)
+                  00002296    00000002     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : startup_msp432e4_ccs.obj (.text:nmiISR)
+                  00002298    000002f0     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:UARTMSP432E4_open)
+                  00002588    000002e0     msp432e4_driverlib.a : sysctl.o (.text:SysCtlClockFreqSet)
+                  00002868    000002d8     FreeRTOS_DHCP.obj (.text:prvProcessDHCPReplies)
+                  00002b40    00000284     FreeRTOS_DNS.obj (.text:prvProcessDNSCache)
+                  00002dc4    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : exit.c.obj (.text:abort:abort)
+                  00002dc8    0000027c     FreeRTOS_TCP_IP.obj (.text:prvTCPPrepareSend)
+                  00003044    00000270     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_a)
+                  000032b4    0000023a     msp432e4_driverlib.a : gpio.o (.text:GPIOPadConfigSet)
+                  000034ee    00000002     rtsv7M4_T_le_v4SPD16_eabi.lib : div0.asm.obj (.text)
+                  000034f0    00000234     FreeRTOS_IP.obj (.text:FreeRTOS_IPInit)
+                  00003724    00000004     --HOLE-- [fill = 0]
+                  00003728    00000222     FreeRTOS_TCP_IP.obj (.text:prvTCPHandleState)
+                  0000394a    00000006     drivers_msp432e4.aem4f : ADCMSP432E4.oem4f (.text:ADCMSP432E4_control)
+                  00003950    0000021a     FreeRTOS_ARP.obj (.text:vARPRefreshCacheEntry)
+                  00003b6a    00000006     msp432e4_driverlib.a : sysctl.o (.text:SysCtlDelay)
+                  00003b70    00000216     NetworkInterface.obj (.text:setupEMAC)
+                  00003d86    00000002     --HOLE-- [fill = 0]
+                  00003d88    0000020c     FreeRTOS_Sockets.obj (.text:vSocketSelect)
+                  00003f94    00000004     --HOLE-- [fill = 0]
+                  00003f98    00000208     FreeRTOS_TCP_WIN.obj (.text:lTCPWindowRxCheck)
+                  000041a0    00000206     timeconvert.obj (.text:civil_from_days)
+                  000043a6    00000002     --HOLE-- [fill = 0]
+                  000043a8    00000200     FreeRTOS_TCP_IP.obj (.text:prvHandleEstablished)
+                  000045a8    000001f4     FreeRTOS_CLI.obj (.text:FreeRTOS_CLIProcessCommand)
+                  0000479c    00000004     --HOLE-- [fill = 0]
+                  000047a0    000001e0     FreeRTOS_TCP_WIN.obj (.text:ulTCPWindowTxGet)
+                  00004980    000001d0     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_g)
+                  00004b50    000001d0     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : queue.obj (.text:xQueueSemaphoreTake)
+                  00004d20    000001c2     FreeRTOS_TCP_IP.obj (.text:prvSingleStepTCPHeaderOptions)
+                  00004ee2    00000006     --HOLE-- [fill = 0]
+                  00004ee8    000001c0     FreeRTOS_IP.obj (.text:prvProcessIPPacket)
+                  000050a8    000001be     FreeRTOS_TCP_IP.obj (.text:prvHandleSynReceived)
+                  00005266    00000002     --HOLE-- [fill = 0]
+                  00005268    000001be     FreeRTOS_IP.obj (.text:prvIPTask)
+                  00005426    00000002     --HOLE-- [fill = 0]
+                  00005428    000001ba     FreeRTOS_Sockets.obj (.text:FreeRTOS_recv)
+                  000055e2    00000002     --HOLE-- [fill = 0]
+                  000055e4    000001b8     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : queue.obj (.text:xQueueGenericSend)
+                  0000579c    000001b6     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_add_t2.asm.obj (.text)
+                  00005952    00000006     --HOLE-- [fill = 0]
+                  00005958    000001ac     FreeRTOS_DNS.obj (.text:prvGetHostByName)
+                  00005b04    000001ac     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : heap_4.obj (.text:pvPortMalloc)
+                  00005cb0    0000019c     FreeRTOS_TCP_IP.obj (.text:prvTCPPrepareConnect)
+                  00005e4c    00000004     --HOLE-- [fill = 0]
+                  00005e50    00000196     FreeRTOS_TCP_IP.obj (.text:vTCPStateChange)
+                  00005fe6    00000002     --HOLE-- [fill = 0]
+                  00005fe8    0000018c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:xTaskGenericNotify)
+                  00006174    00000184     drivers_msp432e4.aem4f : GPIOMSP432E4.oem4f (.text:GPIO_setConfig)
+                  000062f8    0000017c     FreeRTOS_TCP_WIN.obj (.text:lTCPWindowTxAdd)
+                  00006474    0000017c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : queue.obj (.text:xQueueReceive)
+                  000065f0    0000017a     FreeRTOS_TCP_WIN.obj (.text:prvTCPWindowTxCheckAck)
+                  0000676a    00000006     --HOLE-- [fill = 0]
+                  00006770    0000016e     FreeRTOS_DHCP.obj (.text:prvCreatePartDHCPMessage)
+                  000068de    00000002     --HOLE-- [fill = 0]
+                  000068e0    0000016e     FreeRTOS_TCP_IP.obj (.text:prvHandleListen)
+                  00006a4e    00000002     --HOLE-- [fill = 0]
+                  00006a50    00000166     FreeRTOS_Sockets.obj (.text:prvDetermineSocketSize)
+                  00006bb6    00000002     --HOLE-- [fill = 0]
+                  00006bb8    00000164     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : timers.obj (.text:prvProcessReceivedCommands)
+                  00006d1c    00000164                                                     : event_groups.obj (.text:xEventGroupWaitBits)
+                  00006e80    0000015c     FreeRTOS_Sockets.obj (.text:FreeRTOS_send)
+                  00006fdc    00000004     --HOLE-- [fill = 0]
+                  00006fe0    0000015c     NetworkInterface.obj (.text:vPublicSetupEMACNetwork)
+                  0000713c    00000004     --HOLE-- [fill = 0]
+                  00007140    00000158     FreeRTOS_TCP_IP.obj (.text:prvTCPHandleFin)
+                  00007298    00000156     FreeRTOS_Sockets.obj (.text:FreeRTOS_accept)
+                  000073ee    00000002     --HOLE-- [fill = 0]
+                  000073f0    0000014c     NetworkInterface.obj (.text:initDescriptors)
+                  0000753c    00000004     --HOLE-- [fill = 0]
+                  00007540    00000148     FreeRTOS_DNS.obj (.text:prvReadNameField)
+                  00007688    00000142     FreeRTOS_UDP_IP.obj (.text:vProcessGeneratedUDPPacket)
+                  000077ca    00000002     --HOLE-- [fill = 0]
+                  000077cc    00000140     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:xTaskIncrementTick)
+                  0000790c    00000004     --HOLE-- [fill = 0]
+                  00007910    0000013e     FreeRTOS_TCP_IP.obj (.text:prvSendData)
+                  00007a4e    00000002     --HOLE-- [fill = 0]
+                  00007a50    0000013e     FreeRTOS_UDP_IP.obj (.text:xProcessReceivedUDPPacket)
+                  00007b8e    00000002     --HOLE-- [fill = 0]
+                  00007b90    0000013c     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_e)
+                  00007ccc    00000136                                   : fd_div_t2.asm.obj (.text)
+                  00007e02    00000006     --HOLE-- [fill = 0]
+                  00007e08    00000130     FreeRTOS_ARP.obj (.text:eARPGetCacheEntry)
+                  00007f38    0000012c     FreeRTOS_Sockets.obj (.text:FreeRTOS_recvfrom)
+                  00008064    00000004     --HOLE-- [fill = 0]
+                  00008068    0000012c     FreeRTOS_Sockets.obj (.text:vSocketBind)
+                  00008194    00000128     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : queue.obj (.text:xQueueGenericSendFromISR)
+                  000082bc    00000004     --HOLE-- [fill = 0]
+                  000082c0    00000124     FreeRTOS_ARP.obj (.text:eARPProcessPacket)
+                  000083e4    00000124     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:fcvt)
+                  00008508    00000124     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:vTaskGenericNotifyGiveFromISR)
+                  0000862c    00000004     --HOLE-- [fill = 0]
+                  00008630    00000122     FreeRTOS_Sockets.obj (.text:FreeRTOS_sendto)
+                  00008752    00000006     --HOLE-- [fill = 0]
+                  00008758    0000011e     network_time.obj (.text:get_network_time)
+                  00008876    0000011e     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:prvInitialiseNewTask)
+                  00008994    0000011c                                                     : tasks.obj (.text:xTaskResumeAll)
+                  00008ab0    0000011b     cli.obj (.text:vCommandConsoleTask)
+                  00008bcb    00000005     --HOLE-- [fill = 0]
+                  00008bd0    00000118     FreeRTOS_Sockets.obj (.text:FreeRTOS_inet_ntoa)
+                  00008ce8    00000118     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:vTaskSuspend)
+                  00008e00    00000118     BufferAllocation_2.obj (.text:xNetworkBuffersInitialise)
+                  00008f18    00000116     FreeRTOS_ARP.obj (.text:vARPAgeCache)
+                  0000902e    00000002     --HOLE-- [fill = 0]
+                  00009030    00000112     FreeRTOS_Sockets.obj (.text:FreeRTOS_socket)
+                  00009142    00000002     --HOLE-- [fill = 0]
+                  00009144    00000110     rtsv7M4_T_le_v4SPD16_eabi.lib : s_scalbn.c.obj (.text:scalbn)
+                  00009254    0000010e     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : queue.obj (.text:xQueueGiveFromISR)
+                  00009362    00000006     --HOLE-- [fill = 0]
+                  00009368    00000106     FreeRTOS_Sockets.obj (.text:FreeRTOS_inet_pton4)
+                  0000946e    00000002     --HOLE-- [fill = 0]
+                  00009470    00000104     BufferAllocation_2.obj (.text:pxGetNetworkBufferWithDescriptor)
+                  00009574    00000104     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:vTaskPriorityDisinheritAfterTimeout)
+                  00009678    00000104     FreeRTOS_IP.obj (.text:xCheckSizeFields)
+                  0000977c    00000004     --HOLE-- [fill = 0]
+                  00009780    00000102     network_time.obj (.text:check_ntp)
+                  00009882    00000002     --HOLE-- [fill = 0]
+                  00009884    00000100     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:vTaskDelete)
+                  00009984    000000fc     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_mul_t2.asm.obj (.text)
+                  00009a80    000000fa     timeconvert.obj (.text:epoch_to_time)
+                  00009b7a    000000fa     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : event_groups.obj (.text:xEventGroupSetBits)
+                  00009c74    000000f6                                                     : queue.obj (.text:xQueueReceiveFromISR)
+                  00009d6a    00000006     --HOLE-- [fill = 0]
+                  00009d70    000000f0     FreeRTOS_TCP_IP.obj (.text:prvTCPNextTimeout)
+                  00009e60    000000f0     NetworkMiddleware.obj (.text:vApplicationIPNetworkEventHook)
+                  00009f50    000000ee     msp432e4_driverlib.a : adc.o (.text:ADCSequenceStepConfigure)
+                  0000a03e    00000002     --HOLE-- [fill = 0]
+                  0000a040    000000ee     FreeRTOS_IP.obj (.text:prvAllowIPPacket)
+                  0000a12e    00000002     --HOLE-- [fill = 0]
+                  0000a130    000000ec     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:uxTaskGetSystemState)
+                  0000a21c    00000004     --HOLE-- [fill = 0]
+                  0000a220    000000e6     FreeRTOS_TCP_IP.obj (.text:prvStoreRxData)
+                  0000a306    00000002     --HOLE-- [fill = 0]
+                  0000a308    000000e6     FreeRTOS_TCP_IP.obj (.text:prvTCPBufferResize)
+                  0000a3ee    00000002     --HOLE-- [fill = 0]
+                  0000a3f0    000000e6     FreeRTOS_Stream_Buffer.obj (.text:uxStreamBufferAdd)
+                  0000a4d6    00000002     --HOLE-- [fill = 0]
+                  0000a4d8    000000e6     FreeRTOS_Sockets.obj (.text:xTCPTimerCheck)
+                  0000a5be    00000002     --HOLE-- [fill = 0]
+                  0000a5c0    000000e4     drivers_msp432e4.aem4f : ADCMSP432E4.oem4f (.text:ADCMSP432E4_open)
+                  0000a6a4    000000e4     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:eTaskGetState)
+                  0000a788    000000e2     FreeRTOS_IP.obj (.text:prvProcessEthernetPacket)
+                  0000a86a    00000002     --HOLE-- [fill = 0]
+                  0000a86c    000000e0     msp432e4_driverlib.a : emac.o (.text:EMACInit)
+                  0000a94c    00000004     --HOLE-- [fill = 0]
+                  0000a950    000000de     FreeRTOS_TCP_WIN.obj (.text:xTCPWindowNew)
+                  0000aa2e    00000002     --HOLE-- [fill = 0]
+                  0000aa30    000000dc     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:vTaskSwitchContext)
+                  0000ab0c    000000da                                                     : portasm.obj (.text)
+                  0000abe6    00000002     --HOLE-- [fill = 0]
+                  0000abe8    000000da     FreeRTOS_TCP_IP.obj (.text:prvTCPSocketCopy)
+                  0000acc2    00000006     --HOLE-- [fill = 0]
+                  0000acc8    000000d8     FreeRTOS_TCP_WIN.obj (.text:prvCreateSectors)
+                  0000ada0    000000d6     FreeRTOS_ARP.obj (.text:vARPGenerateRequestPacket)
+                  0000ae76    00000002     --HOLE-- [fill = 0]
+                  0000ae78    000000d4     FreeRTOS_Sockets.obj (.text:prvTCPCreateStream)
+                  0000af4c    000000d4     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:xTaskPriorityInherit)
+                  0000b020    000000d2     FreeRTOS_Stream_Buffer.obj (.text:uxStreamBufferGet)
+                  0000b0f2    00000006     --HOLE-- [fill = 0]
+                  0000b0f8    000000d0     FreeRTOS_TCP_IP.obj (.text:prvCheckRxData)
+                  0000b1c8    000000d0     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : port.obj (.text:xPortStartScheduler)
+                  0000b298    000000ce     FreeRTOS_Sockets.obj (.text:FreeRTOS_bind)
+                  0000b366    00000002     --HOLE-- [fill = 0]
+                  0000b368    000000cc     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:xTaskPriorityDisinherit)
+                  0000b434    00000004     --HOLE-- [fill = 0]
+                  0000b438    000000ca     FreeRTOS_TCP_IP.obj (.text:prvSetOptions)
+                  0000b502    00000006     --HOLE-- [fill = 0]
+                  0000b508    000000c8     NetworkInterface.obj (.text:processReceivedPacket)
+                  0000b5d0    000000c8     cli.obj (.text:vTaskGetRunTimeStatsLocal)
+                  0000b698    000000c7     main.obj (.text:setup_wired_ethernet)
+                  0000b75f    00000001     --HOLE-- [fill = 0]
+                  0000b760    000000c4     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:prvAddNewTaskToReadyList)
+                  0000b824    000000c4                                                     : tasks.obj (.text:ulTaskGenericNotifyTake)
+                  0000b8e8    000000c0     FreeRTOS_Sockets.obj (.text:FreeRTOS_listen)
+                  0000b9a8    000000c0     FreeRTOS_DNS.obj (.text:prvCreateDNSMessage)
+                  0000ba68    000000c0     FreeRTOS_DNS.obj (.text:prvReplyDNSMessage)
+                  0000bb28    000000be     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:UARTMSP432E4_close)
+                  0000bbe6    000000bc     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : queue.obj (.text:prvCopyDataToQueue)
+                  0000bca2    00000002     --HOLE-- [fill = 0]
+                  0000bca4    000000bc                                                     : heap_4.obj (.text:prvHeapInit)
+                  0000bd60    000000bc                                                     : timers.obj (.text:prvSwitchTimerLists)
+                  0000be1c    000000bc                                                     : tasks.obj (.text:vTaskGetInfo)
+                  0000bed8    000000ba     NetworkInterface.obj (.text:offEMAC)
+                  0000bf92    00000006     --HOLE-- [fill = 0]
+                  0000bf98    000000ba     FreeRTOS_TCP_IP.obj (.text:xTCPSocketCheck)
+                  0000c052    00000006     --HOLE-- [fill = 0]
+                  0000c058    000000b9     ident.obj (.text:vCreateTCPServerSocketIdent)
+                  0000c111    00000003     --HOLE-- [fill = 0]
+                  0000c114    000000b8     drivers_msp432e4.aem4f : ADCMSP432E4.oem4f (.text:ADCMSP432E4_convert)
+                  0000c1cc    00000004     --HOLE-- [fill = 0]
+                  0000c1d0    000000b8     FreeRTOS_Sockets.obj (.text:prvGetPrivatePortNumber)
+                  0000c288    000000b8     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : queue.obj (.text:xQueueGenericReset)
+                  0000c340    000000b7     webserver.obj (.text:vCreateTCPServerSocketWeb)
+                  0000c3f7    00000001     --HOLE-- [fill = 0]
+                  0000c3f8    000000b6     FreeRTOS_Sockets.obj (.text:lTCPAddRxdata)
+                  0000c4ae    000000b6     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:readTaskCallback)
+                  0000c564    00000004     --HOLE-- [fill = 0]
+                  0000c568    000000b6     FreeRTOS_TCP_WIN.obj (.text:xTCPWindowTxHasData)
+                  0000c61e    00000002     --HOLE-- [fill = 0]
+                  0000c620    000000b4     FreeRTOS_DNS.obj (.text:prvSkipNameField)
+                  0000c6d4    000000b4     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:xTaskCheckForTimeOut)
+                  0000c788    000000b1     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_ltostr)
+                  0000c839    00000003     --HOLE-- [fill = 0]
+                  0000c83c    000000b0     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:prvAddCurrentTaskToDelayedList)
+                  0000c8ec    00000004     --HOLE-- [fill = 0]
+                  0000c8f0    000000b0     FreeRTOS_Sockets.obj (.text:prvTCPSendCheck)
+                  0000c9a0    000000b0     FreeRTOS_TCP_IP.obj (.text:prvTCPSendPacket)
+                  0000ca50    000000b0     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:readTaskBlocking)
+                  0000cb00    000000ae     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : queue.obj (.text:prvUnlockQueue)
+                  0000cbae    00000002     --HOLE-- [fill = 0]
+                  0000cbb0    000000ac     drivers_msp432e4.aem4f : GPIOMSP432E4.oem4f (.text:GPIO_init)
+                  0000cc5c    00000004     --HOLE-- [fill = 0]
+                  0000cc60    000000ac     FreeRTOS_TCP_IP.obj (.text:prvCheckOptions)
+                  0000cd0c    000000ac     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:vTaskRemoveFromUnorderedEventList)
+                  0000cdb8    000000aa     FreeRTOS_IP.obj (.text:eConsiderFrameForProcessing)
+                  0000ce62    00000006     --HOLE-- [fill = 0]
+                  0000ce68    000000aa     FreeRTOS_TCP_IP.obj (.text:prvTCPStatusAgeCheck)
+                  0000cf12    00000006     --HOLE-- [fill = 0]
+                  0000cf18    000000a8     NetworkInterface.obj (.text:packetTransmit)
+                  0000cfc0    000000a8     FreeRTOS_DHCP.obj (.text:prvCreateDHCPSocket)
+                  0000d068    000000a8     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : heap_4.obj (.text:prvInsertBlockIntoFreeList)
+                  0000d110    000000a8     FreeRTOS_IP.obj (.text:prvProcessICMPEchoRequest)
+                  0000d1b8    000000a8     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : heap_4.obj (.text:vPortFree)
+                  0000d260    000000a8                                                     : queue.obj (.text:xQueueGenericCreate)
+                  0000d308    000000a8                                                     : tasks.obj (.text:xTaskRemoveFromEventList)
+                  0000d3b0    000000a6     FreeRTOS_TCP_WIN.obj (.text:prvTCPWindowFastRetransmit)
+                  0000d456    000000a4     msp432e4_driverlib.a : gpio.o (.text:GPIOIntTypeSet)
+                  0000d4fa    00000006     --HOLE-- [fill = 0]
+                  0000d500    000000a4     FreeRTOS_TCP_WIN.obj (.text:vTCPWindowInit)
+                  0000d5a4    00000004     --HOLE-- [fill = 0]
+                  0000d5a8    000000a2     FreeRTOS_Sockets.obj (.text:vSocketClose)
+                  0000d64a    00000002     --HOLE-- [fill = 0]
+                  0000d64c    000000a0     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_create)
+                  0000d6ec    0000009e     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:UARTMSP432E4_readPolling)
+                  0000d78a    0000009e     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:prvListTasksWithinSingleList)
+                  0000d828    0000009c     FreeRTOS_TCP_IP.obj (.text:prvSetSynAckOptions)
+                  0000d8c4    0000009c     rtsv7M4_T_le_v4SPD16_eabi.lib : memcpy_t2.asm.obj (.text)
+                  0000d960    0000009c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:vTaskResume)
+                  0000d9fc    0000009c                                                     : tasks.obj (.text:vTaskStartScheduler)
+                  0000da98    0000009a     NetworkInterface.obj (.text:ethernetIntHandler)
+                  0000db32    00000098     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:UARTMSP432E4_write)
+                  0000dbca    00000006     --HOLE-- [fill = 0]
+                  0000dbd0    00000098     NetworkInterface.obj (.text:xNetworkInterfaceOutput)
+                  0000dc68    00000096     NetworkInterface.obj (.text:loadMACInternal)
+                  0000dcfe    00000096     rtsv7M4_T_le_v4SPD16_eabi.lib : ull_div_t2.asm.obj (.text)
+                  0000dd94    00000004     --HOLE-- [fill = 0]
+                  0000dd98    00000094     FreeRTOS_Sockets.obj (.text:pxTCPSocketLookup)
+                  0000de2c    00000094     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:readIsrTextBlocking)
+                  0000dec0    00000094     FreeRTOS_IP.obj (.text:xSendEventStructToIPTask)
+                  0000df54    00000004     --HOLE-- [fill = 0]
+                  0000df58    00000094     FreeRTOS_TCP_WIN.obj (.text:xTCPWindowRxConfirm)
+                  0000dfec    00000004     --HOLE-- [fill = 0]
+                  0000dff0    00000092     FreeRTOS_IP.obj (.text:prvCheckNetworkTimers)
+                  0000e082    00000090     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:UARTMSP432E4_control)
+                  0000e112    00000002     --HOLE-- [fill = 0]
+                  0000e114    00000090     msp432e4_driverlib.a : sysctl.o (.text:_SysCtlFrequencyGet)
+                  0000e1a4    00000004     --HOLE-- [fill = 0]
+                  0000e1a8    0000008e     NetworkInterface.obj (.text:prvCheckLinkUpOrDownNetStateTask)
+                  0000e236    00000002     --HOLE-- [fill = 0]
+                  0000e238    0000008c     FreeRTOS_CLI.obj (.text:FreeRTOS_CLIRegisterCommand)
+                  0000e2c4    0000008c     msp432e4_driverlib.a : sysctl.o (.text:SysCtlPeripheralReset)
+                  0000e350    0000008c     FreeRTOS_ARP.obj (.text:prvCacheLookup)
+                  0000e3dc    00000004     --HOLE-- [fill = 0]
+                  0000e3e0    0000008c     FreeRTOS_DNS.obj (.text:prvPrepareLookup)
+                  0000e46c    00000004     --HOLE-- [fill = 0]
+                  0000e470    0000008c     FreeRTOS_DHCP.obj (.text:prvSendDHCPRequest)
+                  0000e4fc    00000004     --HOLE-- [fill = 0]
+                  0000e500    0000008c     ident.obj (.text:prvServerConnectionInstanceIdent)
+                  0000e58c    00000004     --HOLE-- [fill = 0]
+                  0000e590    0000008c     FreeRTOS_TCP_IP.obj (.text:xTCPCheckNewClient)
+                  0000e61c    00000004     --HOLE-- [fill = 0]
+                  0000e620    0000008a     NetworkInterface.obj (.text:prvEMACDeferredInterruptHandlerTaskRX)
+                  0000e6aa    00000006     --HOLE-- [fill = 0]
+                  0000e6b0    00000088     FreeRTOS_ARP.obj (.text:FreeRTOS_OutputARPRequest)
+                  0000e738    00000088     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : timers.obj (.text:prvProcessTimerOrBlockTask)
+                  0000e7c0    00000088     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:readIsrTextCallback)
+                  0000e848    00000086     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_cmp_t2.asm.obj (.text:__aeabi_cdcmple)
+                  0000e8ce    00000086                                   : fd_cmp_t2.asm.obj (.text:__aeabi_cdrcmple)
+                  0000e954    00000004     --HOLE-- [fill = 0]
+                  0000e958    00000085     NetworkMiddleware.obj (.text:vPublicSetupFreeRTOSTasks)
+                  0000e9dd    00000003     --HOLE-- [fill = 0]
+                  0000e9e0    00000084     network_time.obj (.text:get_unix_time_from_ntp)
+                  0000ea64    00000004     --HOLE-- [fill = 0]
+                  0000ea68    00000084     FreeRTOS_IP.obj (.text:vReturnEthernetFrame)
+                  0000eaec    00000084     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : timers.obj (.text:xTimerGenericCommand)
+                  0000eb70    00000082     webserver.obj (.text:prvServerConnectionInstanceWeb)
+                  0000ebf2    00000002     --HOLE-- [fill = 0]
+                  0000ebf4    00000080     msp432e4_driverlib.a : interrupt.o (.text:IntDisable)
+                  0000ec74    00000080                          : interrupt.o (.text:IntEnable)
+                  0000ecf4    00000004     --HOLE-- [fill = 0]
+                  0000ecf8    00000080     FreeRTOS_IP.obj (.text:prvCalculateSleepTime)
+                  0000ed78    00000080     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : timers.obj (.text:prvProcessExpiredTimer)
+                  0000edf8    00000080     NetworkInterface.obj (.text:vPrivateTurnOffEMAC)
+                  0000ee78    0000007e     FreeRTOS_TCP_WIN.obj (.text:prvTCPWindowTxHasSpace)
+                  0000eef6    00000002     --HOLE-- [fill = 0]
+                  0000eef8    0000007c     network_time.obj (.text:ntp_timestamp_to_unix_timestamp)
+                  0000ef74    0000007c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:prvIdleTask)
+                  0000eff0    0000007c     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:writeData)
+                  0000f06c    00000004     --HOLE-- [fill = 0]
+                  0000f070    0000007b     cli.obj (.text:printNetworkTime)
+                  0000f0eb    00000001     --HOLE-- [fill = 0]
+                  0000f0ec    0000007a     rtsv7M4_T_le_v4SPD16_eabi.lib : memset_t2.asm.obj (.text)
+                  0000f166    0000007a     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:xTaskCreate)
+                  0000f1e0    00000078                                                     : timers.obj (.text:prvInsertTimerInActiveList)
+                  0000f258    00000078     FreeRTOS_Sockets.obj (.text:prvSockopt_so_buffer)
+                  0000f2d0    00000076     msp432e4_driverlib.a : uart.o (.text:UARTConfigSetExpClk)
+                  0000f346    00000002     --HOLE-- [fill = 0]
+                  0000f348    00000074     NetworkInterface.obj (.text:applicationProcessFrameRX)
+                  0000f3bc    00000074     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:prvInitialiseTaskLists)
+                  0000f430    00000074                                                     : port.obj (.text:vPortValidateInterruptPriority)
+                  0000f4a4    00000004     --HOLE-- [fill = 0]
+                  0000f4a8    00000072     FreeRTOS_CLI.obj (.text:prvHelpCommand)
+                  0000f51a    00000006     --HOLE-- [fill = 0]
+                  0000f520    00000072     FreeRTOS_TCP_IP.obj (.text:prvSocketSetMSS)
+                  0000f592    00000006     --HOLE-- [fill = 0]
+                  0000f598    00000072     FreeRTOS_Sockets.obj (.text:prvTCPSetSocketCount)
+                  0000f60a    00000006     --HOLE-- [fill = 0]
+                  0000f610    00000070     FreeRTOS_TCP_IP.obj (.text:prvReadSackOption)
+                  0000f680    00000070     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : ClockP_freertos.obj (.text:setClockObjTimeout)
+                  0000f6f0    00000070     FreeRTOS_TCP_WIN.obj (.text:vTCPWindowCreate)
+                  0000f760    0000006e     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_mcpy)
+                  0000f7ce    0000006e                                   : ll_div_t2.asm.obj (.text)
+                  0000f83c    00000004     --HOLE-- [fill = 0]
+                  0000f840    0000006e     string_helper.obj (.text:trimwhitespace)
+                  0000f8ae    00000002     --HOLE-- [fill = 0]
+                  0000f8b0    0000006e     BufferAllocation_2.obj (.text:vReleaseNetworkBufferAndDescriptor)
+                  0000f91e    00000002     --HOLE-- [fill = 0]
+                  0000f920    0000006c     msp432e4_driverlib.a : emac.o (.text:EMACPHYConfigSet)
+                  0000f98c    0000006c     drivers_msp432e4.aem4f : PowerMSP432E4.oem4f (.text:Power_releaseDependency)
+                  0000f9f8    0000006c     rtsv7M4_T_le_v4SPD16_eabi.lib : asctime.c.obj (.text:asctime)
+                  0000fa64    00000004     --HOLE-- [fill = 0]
+                  0000fa68    0000006a     FreeRTOS_TCP_WIN.obj (.text:vTCPWindowDestroy)
+                  0000fad2    00000002     --HOLE-- [fill = 0]
+                  0000fad4    00000068     drivers_msp432e4.aem4f : GPIOMSP432E4.oem4f (.text:GPIO_hwiIntFxn)
+                  0000fb3c    00000068                            : PowerMSP432E4.oem4f (.text:Power_setDependency)
+                  0000fba4    00000068     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  0000fc0c    00000004     --HOLE-- [fill = 0]
+                  0000fc10    00000068     NetworkInterface.obj (.text:prvEMACDeferredInterfaceOutputTaskTX)
+                  0000fc78    00000068     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:prvTaskIsTaskSuspended)
+                  0000fce0    00000068     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:readIsrBinaryBlocking)
+                  0000fd48    00000066     FreeRTOS_Sockets.obj (.text:FreeRTOS_shutdown)
+                  0000fdae    00000066     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : timers.obj (.text:prvInitialiseNewTimer)
+                  0000fe14    00000004     --HOLE-- [fill = 0]
+                  0000fe18    00000066     FreeRTOS_TCP_IP.obj (.text:prvTCPSocketIsActive)
+                  0000fe7e    00000066     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : list.obj (.text:vListInsert)
+                  0000fee4    00000064                                                     : ClockP_freertos.obj (.text:ClockP_stop)
+                  0000ff48    00000064     drivers_msp432e4.aem4f : PowerMSP432E4.oem4f (.text:Power_init)
+                  0000ffac    00000064     rtsv7M4_T_le_v4SPD16_eabi.lib : s_frexp.c.obj (.text:frexp)
+                  00010010    00000064     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:prvGetExpectedIdleTime)
+                  00010074    00000064     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:readIsrBinaryCallback)
+                  000100d8    00000064     NetworkInterface.obj (.text:vPrivateTurnOnEMAC)
+                  0001013c    00000064     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:vTaskPlaceOnUnorderedEventList)
+                  000101a0    00000060     drivers_msp432e4.aem4f : ADCMSP432E4.oem4f (.text:ADCMSP432E4_close)
+                  00010200    00000060     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : HwiPMSP432E4_freertos.obj (.text:HwiP_create)
+                  00010260    00000060     FreeRTOS_CLI.obj (.text:prvGetNumberOfParameters)
+                  000102c0    00000060     NetworkMiddleware.obj (.text:prvNetworkResetTask)
+                  00010320    00000060     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : port.obj (.text:pxPortInitialiseStack)
+                  00010380    00000060     FreeRTOS_Stream_Buffer.obj (.text:xStreamBufferLessThenEqual)
+                  000103e0    0000005e     msp432e4_driverlib.a : emac.o (.text:EMACIntEnable)
+                  0001043e    00000002     --HOLE-- [fill = 0]
+                  00010440    0000005e     FreeRTOS_IP.obj (.text:prvIPTimerCheck)
+                  0001049e    00000002     --HOLE-- [fill = 0]
+                  000104a0    0000005e     FreeRTOS_Sockets.obj (.text:vSocketWakeUpUser)
+                  000104fe    0000005e     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : event_groups.obj (.text:xEventGroupClearBits)
+                  0001055c    0000005c     msp432e4_driverlib.a : emac.o (.text:EMACAddrSet)
+                  000105b8    0000005c                          : emac.o (.text:EMACIntStatus)
+                  00010614    0000005c                          : gpio.o (.text:GPIODirModeSet)
+                  00010670    0000005c                          : interrupt.o (.text:IntRegister)
+                  000106cc    0000005c     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:getPowerResourceId)
+                  00010728    0000005c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : queue.obj (.text:vQueueWaitForMessageRestricted)
+                  00010784    00000004     --HOLE-- [fill = 0]
+                  00010788    0000005c     FreeRTOS_IP.obj (.text:vSetMultiCastIPv4MacAddress)
+                  000107e4    0000005c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:vTaskDelay)
+                  00010840    0000005c     FreeRTOS_TCP_WIN.obj (.text:xTCPWindowRxFind)
+                  0001089c    00000004     --HOLE-- [fill = 0]
+                  000108a0    0000005a     FreeRTOS_IP.obj (.text:prvProcessNetworkDownEvent)
+                  000108fa    00000006     --HOLE-- [fill = 0]
+                  00010900    0000005a     FreeRTOS_TCP_IP.obj (.text:prvTCPSendRepeated)
+                  0001095a    00000058     msp432e4_driverlib.a : adc.o (.text:ADCIntStatus)
+                  000109b2    00000058                          : emac.o (.text:EMACIntClear)
+                  00010a0a    00000006     --HOLE-- [fill = 0]
+                  00010a10    00000058     FreeRTOS_IP.obj (.text:FreeRTOS_GetAddressConfiguration)
+                  00010a68    00000058     drivers_msp432e4.aem4f : GPIOMSP432E4.oem4f (.text:GPIO_setCallback)
+                  00010ac0    00000058     uart_debug.obj (.text:setup_uart_debug)
+                  00010b18    00000058     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : port.obj (.text:vPortSetupTimerInterrupt)
+                  00010b70    00000058                                                     : queue.obj (.text:xQueueCreateCountingSemaphore)
+                  00010bc8    00000056     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_pconv_f)
+                  00010c1e    00000002     --HOLE-- [fill = 0]
+                  00010c20    00000056     FreeRTOS_DHCP.obj (.text:prvSendDHCPDiscover)
+                  00010c76    00000002     --HOLE-- [fill = 0]
+                  00010c78    00000056     FreeRTOS_Sockets.obj (.text:pxUDPSocketLookup)
+                  00010cce    00000056     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : event_groups.obj (.text:vEventGroupDelete)
+                  00010d24    00000054     drivers_msp432e4.aem4f : ADCMSP432E4.oem4f (.text:ADCMSP432E4_init)
+                  00010d78    00000054     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_delete)
+                  00010dcc    00000054     drivers_msp432e4.aem4f : GPIOMSP432E4.oem4f (.text:GPIO_write)
+                  00010e20    00000054     msp432e4_driverlib.a : interrupt.o (.text:IntPrioritySet)
+                  00010e74    00000054     rtsv7M4_T_le_v4SPD16_eabi.lib : _ltoa.c.obj (.text:__TI_ltoa)
+                  00010ec8    00000054     FreeRTOS_Sockets.obj (.text:pxListFindListItemWithValue)
+                  00010f1c    00000054     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : timers.obj (.text:xTimerCreateTimerTask)
+                  00010f70    00000052     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_ecpy)
+                  00010fc2    00000006     --HOLE-- [fill = 0]
+                  00010fc8    00000052     helper_math.obj (.text:ntohll)
+                  0001101a    00000002     --HOLE-- [fill = 0]
+                  0001101c    00000050     drivers_msp432e4.aem4f : ADCMSP432E4.oem4f (.text:ADCMSP432E4_getPowerResourceId)
+                  0001106c    00000050     msp432e4_driverlib.a : adc.o (.text:ADCSequenceConfigure)
+                  000110bc    00000050                          : emac.o (.text:EMACConfigSet)
+                  0001110c    00000050     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:UARTMSP432E4_hwiIntFxn)
+                  0001115c    00000004     --HOLE-- [fill = 0]
+                  00011160    00000050     FreeRTOS_DHCP.obj (.text:prvInitialiseDHCP)
+                  000111b0    00000050     FreeRTOS_TCP_IP.obj (.text:prvTCPCreateWindow)
+                  00011200    0000004e     adc_rand.obj (.text:obtain_rand32)
+                  0001124e    00000002     --HOLE-- [fill = 0]
+                  00011250    0000004e     FreeRTOS_Sockets.obj (.text:prvValidSocket)
+                  0001129e    0000004c     msp432e4_driverlib.a : emac.o (.text:EMACPHYRead)
+                  000112ea    0000004c     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:UARTMSP432E4_writePolling)
+                  00011336    00000002     --HOLE-- [fill = 0]
+                  00011338    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : atoi.c.obj (.text:atoi)
+                  00011384    0000004c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : timers.obj (.text:prvCheckForValidListAndQueue)
+                  000113d0    0000004c                                                     : tasks.obj (.text:prvCheckTasksWaitingTermination)
+                  0001141c    00000004     --HOLE-- [fill = 0]
+                  00011420    0000004c     FreeRTOS_IP.obj (.text:pxDuplicateNetworkBufferWithDescriptor)
+                  0001146c    0000004c     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:ringBufGet)
+                  000114b8    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : snprintf.c.obj (.text:snprintf)
+                  00011504    0000004c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : port.obj (.text:vPortEnterCritical)
+                  00011550    0000004c                                                     : tasks.obj (.text:vTaskSetThreadLocalStoragePointer)
+                  0001159c    00000004     --HOLE-- [fill = 0]
+                  000115a0    0000004a     FreeRTOS_TCP_IP.obj (.text:prvWinScaleFactor)
+                  000115ea    00000002     --HOLE-- [fill = 0]
+                  000115ec    00000048     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : HwiPMSP432E4_freertos.obj (.text:HwiP_dispatch)
+                  00011634    00000048     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:UARTMSP432E4_writeCancel)
+                  0001167c    00000048     rtsv7M4_T_le_v4SPD16_eabi.lib : fd_toi_t2.asm.obj (.text)
+                  000116c4    00000048     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : list.obj (.text:uxListRemove)
+                  0001170c    00000004     --HOLE-- [fill = 0]
+                  00011710    00000048     FreeRTOS_TCP_IP.obj (.text:vStreamBufferMoveMid)
+                  00011758    00000046     drivers_msp432e4.aem4f : RingBuf.oem4f (.text:RingBuf_put)
+                  0001179e    00000002     --HOLE-- [fill = 0]
+                  000117a0    00000046     FreeRTOS_DNS.obj (.text:prvCreateDNSSocket)
+                  000117e6    00000002     --HOLE-- [fill = 0]
+                  000117e8    00000046     FreeRTOS_TCP_WIN.obj (.text:ulTCPWindowTxSack)
+                  0001182e    00000002     --HOLE-- [fill = 0]
+                  00011830    00000046     FreeRTOS_IP.obj (.text:xIsIPv4Multicast)
+                  00011876    00000002     --HOLE-- [fill = 0]
+                  00011878    00000044     drivers_msp432e4.aem4f : ADC.oem4f (.text:ADC_init)
+                  000118bc    00000004     --HOLE-- [fill = 0]
+                  000118c0    00000044     FreeRTOS_Sockets.obj (.text:FreeRTOS_closesocket)
+                  00011904    00000004     --HOLE-- [fill = 0]
+                  00011908    00000044     FreeRTOS_Sockets.obj (.text:FreeRTOS_tx_space)
+                  0001194c    00000044     msp432e4_driverlib.a : gpio.o (.text:GPIOPinConfigure)
+                  00011990    00000044                          : sysctl.o (.text:SysCtlPeripheralPresent)
+                  000119d4    00000044                          : sysctl.o (.text:SysCtlPeripheralReady)
+                  00011a18    00000044     drivers_msp432e4.aem4f : UART.oem4f (.text:UART_init)
+                  00011a5c    00000044     msp432e4_driverlib.a : sysctl.o (.text:_SysCtlMemTimingGet)
+                  00011aa0    00000044     rtsv7M4_T_le_v4SPD16_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  00011ae4    00000044     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : queue.obj (.text:prvInitialiseNewQueue)
+                  00011b28    00000044     FreeRTOS_TCP_IP.obj (.text:prvTCPAddTxData)
+                  00011b6c    00000004     --HOLE-- [fill = 0]
+                  00011b70    00000044     FreeRTOS_TCP_WIN.obj (.text:vTCPWindowFree)
+                  00011bb4    00000042     msp432e4_driverlib.a : adc.o (.text:ADCSequenceDataGet)
+                  00011bf6    00000042                          : emac.o (.text:EMACAddrFilterSet)
+                  00011c38    00000041     ident.obj (.text:setup_ident)
+                  00011c79    00000003     --HOLE-- [fill = 0]
+                  00011c7c    00000040     drivers_msp432e4.aem4f : ADC.oem4f (.text:ADC_open)
+                  00011cbc    00000040                            : RingBuf.oem4f (.text:RingBuf_get)
+                  00011cfc    00000040     msp432e4_driverlib.a : sysctl.o (.text:SysCtlPeripheralDisable)
+                  00011d3c    00000040                          : sysctl.o (.text:SysCtlPeripheralEnable)
+                  00011d7c    00000040                          : sysctl.o (.text:SysCtlPeripheralPowerOff)
+                  00011dbc    00000040                          : sysctl.o (.text:SysCtlPeripheralPowerOn)
+                  00011dfc    00000040                          : sysctl.o (.text:SysCtlPeripheralSleepDisable)
+                  00011e3c    00000040                          : sysctl.o (.text:SysCtlPeripheralSleepEnable)
+                  00011e7c    00000040     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:UARTMSP432E4_read)
+                  00011ebc    00000040                            : UART.oem4f (.text:UART_open)
+                  00011efc    00000040     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : aeabi_portable.obj (.text:__aeabi_errno_addr)
+                  00011f3c    00000004     --HOLE-- [fill = 0]
+                  00011f40    00000040     NetworkInterface.obj (.text:isEMACLinkUp)
+                  00011f80    00000040     FreeRTOS_IP.obj (.text:prvIPTimerStart)
+                  00011fc0    00000040     FreeRTOS_IP.obj (.text:prvPacketBuffer_to_NetworkBuffer)
+                  00012000    00000040     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:vTaskPlaceOnEventListRestricted)
+                  00012040    00000040     rtsv7M4_T_le_v4SPD16_eabi.lib : vsnprintf.c.obj (.text:vsnprintf)
+                  00012080    0000003e     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_callbackFxn)
+                  000120be    0000003e     rtsv7M4_T_le_v4SPD16_eabi.lib : _printfi.c.obj (.text:_fcpy)
+                  000120fc    00000004     --HOLE-- [fill = 0]
+                  00012100    0000003e     FreeRTOS_TCP_WIN.obj (.text:xTCPWindowRxEmpty)
+                  0001213e    00000002     --HOLE-- [fill = 0]
+                  00012140    0000003c     FreeRTOS_Sockets.obj (.text:FreeRTOS_rx_size)
+                  0001217c    00000004     --HOLE-- [fill = 0]
+                  00012180    0000003c     FreeRTOS_Sockets.obj (.text:FreeRTOS_tx_size)
+                  000121bc    0000003c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : queue.obj (.text:prvCopyDataFromQueue)
+                  000121f8    0000003c                                                     : tasks.obj (.text:pvTaskGetThreadLocalStoragePointer)
+                  00012234    0000003c                                                     : list.obj (.text:vListInsertEnd)
+                  00012270    0000003c                                                     : tasks.obj (.text:vTaskSetTimeOutState)
+                  000122ac    00000004     --HOLE-- [fill = 0]
+                  000122b0    0000003c     FreeRTOS_TCP_WIN.obj (.text:xTCPWindowGetHead)
+                  000122ec    0000003c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : timers.obj (.text:xTimerCreate)
+                  00012328    0000003a     network_time.obj (.text:get_ctime_from_ntp)
+                  00012362    00000006     --HOLE-- [fill = 0]
+                  00012368    0000003a     FreeRTOS_TCP_IP.obj (.text:prvTCPTouchSocket)
+                  000123a2    00000006     --HOLE-- [fill = 0]
+                  000123a8    0000003a     NetworkInterface.obj (.text:vGetInternalNetworkInterfaceMSP432EConfigDefaults)
+                  000123e2    00000002     --HOLE-- [fill = 0]
+                  000123e4    00000038     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : timers.obj (.text:prvGetNextExpireTime)
+                  0001241c    00000038                                                     : port.obj (.text:prvTaskExitError)
+                  00012454    00000004     --HOLE-- [fill = 0]
+                  00012458    00000038     NetworkMiddleware.obj (.text:vConvertOctetsToAddr)
+                  00012490    00000038     FreeRTOS_TCP_WIN.obj (.text:vListInsertGeneric)
+                  000124c8    00000036     ti_drivers_config.obj (.text:Board_init)
+                  000124fe    00000002     --HOLE-- [fill = 0]
+                  00012500    00000036     FreeRTOS_IP.obj (.text:FreeRTOS_NetworkDown)
+                  00012536    00000002     --HOLE-- [fill = 0]
+                  00012538    00000036     FreeRTOS_Sockets.obj (.text:FreeRTOS_inet_ntop4)
+                  0001256e    00000002     --HOLE-- [fill = 0]
+                  00012570    00000036     FreeRTOS_Sockets.obj (.text:FreeRTOS_inet_ntop)
+                  000125a6    00000036     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:UARTMSP432E4_readCancel)
+                  000125dc    00000036     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : event_groups.obj (.text:prvTestWaitCondition)
+                  00012612    00000036     rtsv7M4_T_le_v4SPD16_eabi.lib : strncpy.c.obj (.text:strncpy)
+                  00012648    00000036     FreeRTOS_DNS.obj (.text:ulDNSHandlePacket)
+                  0001267e    00000002     --HOLE-- [fill = 0]
+                  00012680    00000036     FreeRTOS_Sockets.obj (.text:uxStreamBufferGetPtr)
+                  000126b6    00000002     --HOLE-- [fill = 0]
+                  000126b8    00000036     FreeRTOS_TCP_WIN.obj (.text:xTCPWindowPeekHead)
+                  000126ee    00000034     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : SemaphoreP_freertos.obj (.text:SemaphoreP_pend)
+                  00012722    00000002     --HOLE-- [fill = 0]
+                  00012724    00000034     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  00012758    00000034     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : timers.obj (.text:prvSampleTimeNow)
+                  0001278c    00000004     --HOLE-- [fill = 0]
+                  00012790    00000034     adc_rand.obj (.text:setup_adc_rand)
+                  000127c4    00000004     --HOLE-- [fill = 0]
+                  000127c8    00000034     cli.obj (.text:setup_console)
+                  000127fc    00000004     --HOLE-- [fill = 0]
+                  00012800    00000034     FreeRTOS_Sockets.obj (.text:uxStreamBufferSpace)
+                  00012834    00000004     --HOLE-- [fill = 0]
+                  00012838    00000034     FreeRTOS_Stream_Buffer.obj (.text:uxStreamBufferSpace)
+                  0001286c    00000004     --HOLE-- [fill = 0]
+                  00012870    00000034     FreeRTOS_TCP_IP.obj (.text:uxStreamBufferSpace)
+                  000128a4    00000004     --HOLE-- [fill = 0]
+                  000128a8    00000034     FreeRTOS_IP.obj (.text:vIPSetDHCPTimerEnableState)
+                  000128dc    00000034     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:vTaskPlaceOnEventList)
+                  00012910    00000032     network_time.obj (.text:get_delay_dispersion)
+                  00012942    00000006     --HOLE-- [fill = 0]
+                  00012948    00000032     uart_debug.obj (.text:read_debug_uart)
+                  0001297a    00000006     --HOLE-- [fill = 0]
+                  00012980    00000032     main.obj (.text:setup_clocks)
+                  000129b2    00000006     --HOLE-- [fill = 0]
+                  000129b8    00000032     FreeRTOS_TCP_WIN.obj (.text:ulTCPWindowTxAck)
+                  000129ea    00000006     --HOLE-- [fill = 0]
+                  000129f0    00000032     FreeRTOS_Sockets.obj (.text:uxStreamBufferDistance)
+                  00012a22    00000006     --HOLE-- [fill = 0]
+                  00012a28    00000032     FreeRTOS_Stream_Buffer.obj (.text:uxStreamBufferDistance)
+                  00012a5a    00000006     --HOLE-- [fill = 0]
+                  00012a60    00000032     FreeRTOS_TCP_IP.obj (.text:uxStreamBufferDistance)
+                  00012a92    00000030     drivers_msp432e4.aem4f : GPIOMSP432E4.oem4f (.text:GPIOMSP432E4_undoPinConfig)
+                  00012ac2    00000002     --HOLE-- [fill = 0]
+                  00012ac4    00000030     msp432e4_driverlib.a : uart.o (.text:UARTDisable)
+                  00012af4    00000030     rtsv7M4_T_le_v4SPD16_eabi.lib : snprintf.c.obj (.text:_outs)
+                  00012b24    00000030                                   : vsnprintf.c.obj (.text:_outs)
+                  00012b54    00000004     --HOLE-- [fill = 0]
+                  00012b58    00000030     network_time.obj (.text:check_delay_dispersion)
+                  00012b88    00000030     FreeRTOS_IP.obj (.text:prvProcessICMPPacket)
+                  00012bb8    00000030     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:prvResetNextTaskUnblockTime)
+                  00012be8    00000030     FreeRTOS_DNS.obj (.text:ulNBNSHandlePacket)
+                  00012c18    00000030     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : list.obj (.text:vListInitialise)
+                  00012c48    00000030                                                     : port.obj (.text:vPortExitCritical)
+                  00012c78    00000030                                                     : tasks.obj (.text:xTaskGetSchedulerState)
+                  00012ca8    0000002f     webserver.obj (.text:setup_web)
+                  00012cd7    00000001     --HOLE-- [fill = 0]
+                  00012cd8    0000002e     adc_rand.obj (.text:get_rand_adc_output)
+                  00012d06    0000002e     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:prvTaskCheckFreeStackSpace)
+                  00012d34    0000002e                                                     : timers.obj (.text:pvTimerGetTimerID)
+                  00012d62    0000002e     rtsv7M4_T_le_v4SPD16_eabi.lib : i_tofd_t2.asm.obj (.text)
+                  00012d90    0000002e     uart_debug.obj (.text:vLoggingPrintf)
+                  00012dbe    00000002     --HOLE-- [fill = 0]
+                  00012dc0    0000002c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : HwiPMSP432E4_freertos.obj (.text:HwiP_disable)
+                  00012dec    0000002c                                                     : SemaphoreP_freertos.obj (.text:SemaphoreP_createBinary)
+                  00012e18    0000002c     msp432e4_driverlib.a : sysctl.o (.text:SysCtlPeripheralClockGating)
+                  00012e44    00000004     --HOLE-- [fill = 0]
+                  00012e48    0000002c     cli.obj (.text:printInfo)
+                  00012e74    0000002c     rtsv7M4_T_le_v4SPD16_eabi.lib : strncmp.c.obj (.text:strncmp)
+                  00012ea0    0000002c     NetworkMiddleware.obj (.text:xApplicationGetRandomNumber)
+                  00012ecc    0000002c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : port.obj (.text:xPortSysTickHandler)
+                  00012ef8    0000002c                                                     : queue.obj (.text:xQueueCreateMutex)
+                  00012f24    00000004     --HOLE-- [fill = 0]
+                  00012f28    0000002a     FreeRTOS_DHCP.obj (.text:prvCloseDHCPSocket)
+                  00012f52    0000002a     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : queue.obj (.text:prvInitialiseMutex)
+                  00012f7c    0000002a                                                     : queue.obj (.text:uxQueueMessagesWaiting)
+                  00012fa6    00000002     --HOLE-- [fill = 0]
+                  00012fa8    0000002a     timeconvert.obj (.text:weekday_from_days)
+                  00012fd2    00000002     --HOLE-- [fill = 0]
+                  00012fd4    00000028     msp432e4_driverlib.a : adc.o (.text:ADCProcessorTrigger)
+                  00012ffc    00000028                          : flash.o (.text:FlashUserGet)
+                  00013024    00000028     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : HwiPMSP432E4_freertos.obj (.text:HwiP_inISR)
+                  0001304c    00000004     --HOLE-- [fill = 0]
+                  00013050    00000028     cli.obj (.text:cli_command_register)
+                  00013078    00000028     FreeRTOS_TCP_WIN.obj (.text:lTCPIncrementTxPosition)
+                  000130a0    00000028     rtsv7M4_T_le_v4SPD16_eabi.lib : memmov.c.obj (.text:memmove)
+                  000130c8    00000028     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:uxTaskResetEventItemValue)
+                  000130f0    00000027     main.obj (.text:main)
+                  00013117    00000001     --HOLE-- [fill = 0]
+                  00013118    00000027     cli.obj (.text:printTasks)
+                  0001313f    00000001     --HOLE-- [fill = 0]
+                  00013140    00000026     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : queue.obj (.text:prvIsQueueFull)
+                  00013166    00000002     --HOLE-- [fill = 0]
+                  00013168    00000026     FreeRTOS_TCP_IP.obj (.text:ulChar2u32)
+                  0001318e    00000002     --HOLE-- [fill = 0]
+                  00013190    00000026     main_thread.obj (.text:vApplicationStackOverflowHook)
+                  000131b6    00000002     --HOLE-- [fill = 0]
+                  000131b8    00000026     FreeRTOS_IP.obj (.text:vIPNetworkUpCalls)
+                  000131de    00000002     --HOLE-- [fill = 0]
+                  000131e0    00000026     NetworkMiddleware.obj (.text:vPublicSetupDeviceName)
+                  00013206    00000002     --HOLE-- [fill = 0]
+                  00013208    00000026     FreeRTOS_DHCP.obj (.text:xIsDHCPSocket)
+                  0001322e    00000002     --HOLE-- [fill = 0]
+                  00013230    00000026     FreeRTOS_IP.obj (.text:xSendDHCPEvent)
+                  00013256    00000002     --HOLE-- [fill = 0]
+                  00013258    00000026     FreeRTOS_IP.obj (.text:xSendEventToIPTask)
+                  0001327e    00000024     msp432e4_driverlib.a : gpio.o (.text:GPIOPinTypeADC)
+                  000132a2    00000024                          : gpio.o (.text:GPIOPinTypeUART)
+                  000132c6    00000024                          : uart.o (.text:UARTCharPutNonBlocking)
+                  000132ea    00000024                          : uart.o (.text:UARTEnable)
+                  0001330e    00000024     rtsv7M4_T_le_v4SPD16_eabi.lib : memcmp.c.obj (.text:memcmp)
+                  00013332    00000024     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : queue.obj (.text:prvGetDisinheritPriorityAfterTimeout)
+                  00013356    00000002     --HOLE-- [fill = 0]
+                  00013358    00000024     main.obj (.text:setup_hardware)
+                  0001337c    00000024     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : queue.obj (.text:vQueueDelete)
+                  000133a0    00000024     NetworkInterface.obj (.text:vSetNetworkInterfaceConfig)
+                  000133c4    00000024     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:vTaskInternalSetTimeOutState)
+                  000133e8    00000024     FreeRTOS_TCP_WIN.obj (.text:xSequenceGreaterThan)
+                  0001340c    00000004     --HOLE-- [fill = 0]
+                  00013410    00000024     FreeRTOS_TCP_WIN.obj (.text:xSequenceLessThan)
+                  00013434    00000004     --HOLE-- [fill = 0]
+                  00013438    00000023     main.obj (.text:setup_tasks)
+                  0001345b    00000001     --HOLE-- [fill = 0]
+                  0001345c    00000022     msp432e4_driverlib.a : emac.o (.text:EMACReset)
+                  0001347e    00000022                          : emac.o (.text:EMACRxEnable)
+                  000134a0    00000022                          : emac.o (.text:EMACTxEnable)
+                  000134c2    00000022                          : gpio.o (.text:GPIOIntStatus)
+                  000134e4    00000022     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : SemaphoreP_freertos.obj (.text:SemaphoreP_post)
+                  00013506    00000002     --HOLE-- [fill = 0]
+                  00013508    00000022     NetworkMiddleware.obj (.text:ulApplicationGetNextSequenceNumber)
+                  0001352a    00000006     --HOLE-- [fill = 0]
+                  00013530    00000022     FreeRTOS_Sockets.obj (.text:uxStreamBufferFrontSpace)
+                  00013552    00000006     --HOLE-- [fill = 0]
+                  00013558    00000022     FreeRTOS_TCP_IP.obj (.text:uxStreamBufferFrontSpace)
+                  0001357a    00000006     --HOLE-- [fill = 0]
+                  00013580    00000022     FreeRTOS_Sockets.obj (.text:uxStreamBufferGetSize)
+                  000135a2    00000006     --HOLE-- [fill = 0]
+                  000135a8    00000022     FreeRTOS_Stream_Buffer.obj (.text:uxStreamBufferGetSize)
+                  000135ca    00000006     --HOLE-- [fill = 0]
+                  000135d0    00000022     FreeRTOS_Sockets.obj (.text:uxStreamBufferGetSpace)
+                  000135f2    00000006     --HOLE-- [fill = 0]
+                  000135f8    00000022     FreeRTOS_Stream_Buffer.obj (.text:uxStreamBufferGetSpace)
+                  0001361a    00000006     --HOLE-- [fill = 0]
+                  00013620    00000022     FreeRTOS_TCP_IP.obj (.text:uxStreamBufferGetSpace)
+                  00013642    00000006     --HOLE-- [fill = 0]
+                  00013648    00000022     FreeRTOS_TCP_IP.obj (.text:uxStreamBufferMidSpace)
+                  0001366a    00000006     --HOLE-- [fill = 0]
+                  00013670    00000022     main_thread.obj (.text:vApplicationMallocFailedHook)
+                  00013692    00000006     --HOLE-- [fill = 0]
+                  00013698    00000022     FreeRTOS_Sockets.obj (.text:vStreamBufferClear)
+                  000136ba    00000006     --HOLE-- [fill = 0]
+                  000136c0    00000022     FreeRTOS_IP.obj (.text:xIsCallingFromIPTask)
+                  000136e2    00000006     --HOLE-- [fill = 0]
+                  000136e8    00000022     FreeRTOS_TCP_WIN.obj (.text:xSequenceGreaterThanOrEqual)
+                  0001370a    00000006     --HOLE-- [fill = 0]
+                  00013710    00000022     FreeRTOS_TCP_WIN.obj (.text:xSequenceLessThanOrEqual)
+                  00013732    00000002     --HOLE-- [fill = 0]
+                  00013734    00000020     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_getCpuFreq)
+                  00013754    00000020     msp432e4_driverlib.a : emac.o (.text:EMACFrameFilterSet)
+                  00013774    00000020                          : gpio.o (.text:GPIOPinWrite)
+                  00013794    00000020     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : HwiPMSP432E4_freertos.obj (.text:HwiP_restore)
+                  000137b4    00000020     drivers_msp432e4.aem4f : RingBuf.oem4f (.text:RingBuf_peek)
+                  000137d4    00000020                            : GPIOMSP432E4.oem4f (.text:getGpioIntIndex)
+                  000137f4    00000020     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : queue.obj (.text:prvIsQueueEmpty)
+                  00013814    00000020                                                     : event_groups.obj (.text:xEventGroupCreate)
+                  00013834    00000004     --HOLE-- [fill = 0]
+                  00013838    00000020     FreeRTOS_DNS.obj (.text:xSocketValid)
+                  00013858    0000001e     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_start)
+                  00013876    00000002     --HOLE-- [fill = 0]
+                  00013878    0000001e     FreeRTOS_DNS.obj (.text:FreeRTOS_dnslookup)
+                  00013896    00000002     --HOLE-- [fill = 0]
+                  00013898    0000001e     FreeRTOS_Sockets.obj (.text:FreeRTOS_round_up)
+                  000138b6    0000001e     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : HwiPMSP432E4_freertos.obj (.text:HwiP_Params_init)
+                  000138d4    0000001e     msp432e4_driverlib.a : uart.o (.text:UARTBusy)
+                  000138f2    0000001e                          : uart.o (.text:UARTCharPut)
+                  00013910    0000001e                          : uart.o (.text:UARTCharsAvail)
+                  0001392e    0000001e                          : uart.o (.text:UARTIntStatus)
+                  0001394c    00000004     --HOLE-- [fill = 0]
+                  00013950    0000001e     uart_debug.obj (.text:print_debug)
+                  0001396e    00000002     --HOLE-- [fill = 0]
+                  00013970    0000001e     ident.obj (.text:set_ident_name)
+                  0001398e    00000002     --HOLE-- [fill = 0]
+                  00013990    0000001e     string_helper.obj (.text:string_comp)
+                  000139ae    00000002     --HOLE-- [fill = 0]
+                  000139b0    0000001c     drivers_msp432e4.aem4f : ADCMSP432E4.oem4f (.text:ADCMSP432E4_convertToMicroVolts)
+                  000139cc    0000001c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_Params_init)
+                  000139e8    0000001c     NetworkInterface.obj (.text:DMAFreeDescriptorRX)
+                  00013a04    0000001c     msp432e4_driverlib.a : interrupt.o (.text:IntUnregister)
+                  00013a20    0000001c                          : uart.o (.text:UARTCharGetNonBlocking)
+                  00013a3c    0000001c                          : uart.o (.text:UARTFlowControlSet)
+                  00013a58    0000001c                          : uart.o (.text:UARTTxIntModeSet)
+                  00013a74    0000001c     rtsv7M4_T_le_v4SPD16_eabi.lib : memccpy.c.obj (.text:memccpy)
+                  00013a90    0000001c     FreeRTOS_IP.obj (.text:prvIPTimerReload)
+                  00013aac    0000001c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:pvTaskIncrementMutexHeldCount)
+                  00013ac8    0000001c     FreeRTOS_Sockets.obj (.text:vNetworkSocketsInit)
+                  00013ae4    00000004     --HOLE-- [fill = 0]
+                  00013ae8    0000001c     NetworkInterface.obj (.text:vPublicGetMACAddr)
+                  00013b04    00000004     --HOLE-- [fill = 0]
+                  00013b08    0000001c     NetworkMiddleware.obj (.text:xApplicationDNSQueryHook)
+                  00013b24    0000001a     msp432e4_driverlib.a : adc.o (.text:ADCSequenceDisable)
+                  00013b3e    0000001a                          : adc.o (.text:ADCSequenceEnable)
+                  00013b58    0000001a     FreeRTOS_Sockets.obj (.text:FreeRTOS_inet_addr)
+                  00013b72    00000006     --HOLE-- [fill = 0]
+                  00013b78    0000001a     FreeRTOS_Sockets.obj (.text:FreeRTOS_max_uint32)
+                  00013b92    00000006     --HOLE-- [fill = 0]
+                  00013b98    0000001a     FreeRTOS_Sockets.obj (.text:FreeRTOS_min_int32)
+                  00013bb2    00000006     --HOLE-- [fill = 0]
+                  00013bb8    0000001a     FreeRTOS_TCP_IP.obj (.text:FreeRTOS_min_int32)
+                  00013bd2    00000006     --HOLE-- [fill = 0]
+                  00013bd8    0000001a     FreeRTOS_TCP_WIN.obj (.text:FreeRTOS_min_int32)
+                  00013bf2    00000006     --HOLE-- [fill = 0]
+                  00013bf8    0000001a     FreeRTOS_Sockets.obj (.text:FreeRTOS_min_uint32)
+                  00013c12    00000006     --HOLE-- [fill = 0]
+                  00013c18    0000001a     FreeRTOS_Stream_Buffer.obj (.text:FreeRTOS_min_uint32)
+                  00013c32    00000006     --HOLE-- [fill = 0]
+                  00013c38    0000001a     FreeRTOS_TCP_IP.obj (.text:FreeRTOS_min_uint32)
+                  00013c52    00000006     --HOLE-- [fill = 0]
+                  00013c58    0000001a     FreeRTOS_TCP_WIN.obj (.text:FreeRTOS_min_uint32)
+                  00013c72    0000001a     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : PTLS.obj (.text:PTLS_taskDeleteHook)
+                  00013c8c    0000001a     rtsv7M4_T_le_v4SPD16_eabi.lib : s_copysign.c.obj (.text:copysign)
+                  00013ca6    00000002     --HOLE-- [fill = 0]
+                  00013ca8    0000001a     uart_debug.obj (.text:print_debug_char)
+                  00013cc2    0000001a     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : timers.obj (.text:prvTimerTask)
+                  00013cdc    00000004     --HOLE-- [fill = 0]
+                  00013ce0    0000001a     FreeRTOS_TCP_WIN.obj (.text:vListInsertFifo)
+                  00013cfa    00000018     msp432e4_driverlib.a : adc.o (.text:ADCIntDisableEx)
+                  00013d12    00000002     --HOLE-- [fill = 0]
+                  00013d14    00000018     drivers_msp432e4.aem4f : PowerMSP432E4.oem4f (.text:Power_idleFunc)
+                  00013d2c    00000018     msp432e4_driverlib.a : uart.o (.text:UARTFIFOLevelSet)
+                  00013d44    00000018                          : uart.o (.text:UARTIntDisable)
+                  00013d5c    00000018                          : uart.o (.text:UARTIntEnable)
+                  00013d74    00000018     drivers_msp432e4.aem4f : UART.oem4f (.text:UART_Params_init)
+                  00013d8c    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : snprintf.c.obj (.text:_outc)
+                  00013da4    00000018                                   : vsnprintf.c.obj (.text:_outc)
+                  00013dbc    00000018     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : startup_msp432e4_ccs.obj (.text:localProgramStart)
+                  00013dd4    00000018     rtsv7M4_T_le_v4SPD16_eabi.lib : ll_mul_t2.asm.obj (.text)
+                  00013dec    00000018                                   : strcmp.c.obj (.text:strcmp)
+                  00013e04    00000004     --HOLE-- [fill = 0]
+                  00013e08    00000018     FreeRTOS_DNS.obj (.text:usChar2u16)
+                  00013e20    00000018     FreeRTOS_TCP_IP.obj (.text:usChar2u16)
+                  00013e38    00000018     FreeRTOS_TCP_WIN.obj (.text:xTCPWindowTxDone)
+                  00013e50    00000016     msp432e4_driverlib.a : adc.o (.text:ADCIntClear)
+                  00013e66    00000016     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_setTimeout)
+                  00013e7c    00000016     msp432e4_driverlib.a : emac.o (.text:EMACIntRegister)
+                  00013e92    00000016     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : PTLS.obj (.text:PTLS_getBuf)
+                  00013ea8    00000016                                                     : PTLS.obj (.text:PTLS_setBuf)
+                  00013ebe    00000016     msp432e4_driverlib.a : uart.o (.text:UARTCharGet)
+                  00013ed4    00000016     rtsv7M4_T_le_v4SPD16_eabi.lib : strchr.c.obj (.text:strchr)
+                  00013eea    00000006     --HOLE-- [fill = 0]
+                  00013ef0    00000016     FreeRTOS_ARP.obj (.text:vARPSendGratuitous)
+                  00013f06    00000002     --HOLE-- [fill = 0]
+                  00013f08    00000016     BufferAllocation_2.obj (.text:vReleaseNetworkBuffer)
+                  00013f1e    00000002     --HOLE-- [fill = 0]
+                  00013f20    00000016     NetworkInterface.obj (.text:xNetworkInterfaceInitialise)
+                  00013f36    00000014     msp432e4_driverlib.a : emac.o (.text:EMACRxDMADescriptorListSet)
+                  00013f4a    00000014                          : emac.o (.text:EMACTxDMADescriptorListSet)
+                  00013f5e    00000002     --HOLE-- [fill = 0]
+                  00013f60    00000014     FreeRTOS_ARP.obj (.text:FreeRTOS_ClearARP)
+                  00013f74    00000014     msp432e4_driverlib.a : gpio.o (.text:GPIOIntClear)
+                  00013f88    00000014     drivers_msp432e4.aem4f : GPIOMSP432E4.oem4f (.text:GPIOMSP432E4_getGpioBaseAddr)
+                  00013f9c    00000014                            : GPIOMSP432E4.oem4f (.text:GPIOMSP432E4_getPowerResourceId)
+                  00013fb0    00000014     NetworkMiddleware.obj (.text:pcApplicationHostnameHook)
+                  00013fc4    00000014     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:prvDeleteTCB)
+                  00013fd8    00000014     rtsv7M4_T_le_v4SPD16_eabi.lib : strcpy.c.obj (.text:strcpy)
+                  00013fec    00000014                                   : strlen.c.obj (.text:strlen)
+                  00014000    00000014     FreeRTOS_IP.obj (.text:vIPReloadDHCPTimer)
+                  00014014    00000014     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:xTaskGetCurrentTaskHandle)
+                  00014028    00000014                                                     : tasks.obj (.text:xTaskGetTickCount)
+                  0001403c    00000012     msp432e4_driverlib.a : emac.o (.text:EMACTxDMAPollDemand)
+                  0001404e    00000012     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : HwiPMSP432E4_freertos.obj (.text:HwiP_delete)
+                  00014060    00000012     drivers_msp432e4.aem4f : RingBuf.oem4f (.text:RingBuf_construct)
+                  00014072    00000012     msp432e4_driverlib.a : uart.o (.text:UARTIntClear)
+                  00014084    00000012                          : uart.o (.text:UARTRxErrorGet)
+                  00014096    00000002     --HOLE-- [fill = 0]
+                  00014098    00000012     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : startup_msp432e4_ccs.obj (.text:resetISR)
+                  000140aa    00000012     rtsv7M4_T_le_v4SPD16_eabi.lib : wcslen.c.obj (.text:wcslen)
+                  000140bc    00000004     --HOLE-- [fill = 0]
+                  000140c0    00000010     FreeRTOS_IP.obj (.text:FreeRTOS_ReleaseUDPPayloadBuffer)
+                  000140d0    00000010     msp432e4_driverlib.a : interrupt.o (.text:IntMasterEnable)
+                  000140e0    00000010     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : PowerMSP432E4_freertos.obj (.text:PowerMSP432E4_sleepPolicy)
+                  000140f0    00000010     msp432e4_driverlib.a : uart.o (.text:UARTRxErrorClear)
+                  00014100    00000010     rtsv7M4_T_le_v4SPD16_eabi.lib : isspace.c.obj (.text:isspace)
+                  00014110    00000010     FreeRTOS_TCP_IP.obj (.text:prvTCPSendSpecialPacketHelper)
+                  00014120    00000010     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:readBlockingTimeout)
+                  00014130    00000010     gpio.obj (.text:setup_gpio)
+                  00014140    00000010     FreeRTOS_TCP_WIN.obj (.text:ulTimerGetAge)
+                  00014150    00000010     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : list.obj (.text:vListInitialiseItem)
+                  00014160    00000010                                                     : tasks.obj (.text:vTaskSuspendAll)
+                  00014170    0000000f     cli.obj (.text:print_prompt)
+                  0001417f    00000001     --HOLE-- [fill = 0]
+                  00014180    0000000e     msp432e4_driverlib.a : emac.o (.text:EMACStatusGet)
+                  0001418e    0000000e     drivers_msp432e4.aem4f : RingBuf.oem4f (.text:RingBuf_isFull)
+                  0001419c    0000000e     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  000141aa    00000006     --HOLE-- [fill = 0]
+                  000141b0    0000000e     FreeRTOS_TCP_IP.obj (.text:prvTCPSendChallengeAck)
+                  000141be    00000002     --HOLE-- [fill = 0]
+                  000141c0    0000000e     FreeRTOS_TCP_IP.obj (.text:prvTCPSendReset)
+                  000141ce    00000002     --HOLE-- [fill = 0]
+                  000141d0    0000000e     FreeRTOS_IP.obj (.text:pxUDPPayloadBuffer_to_NetworkBuffer)
+                  000141de    00000002     --HOLE-- [fill = 0]
+                  000141e0    0000000e     FreeRTOS_TCP_WIN.obj (.text:vTCPTimerSet)
+                  000141ee    0000000c     msp432e4_driverlib.a : cpu.o (.text:CPUcpsie)
+                  000141fa    00000006     --HOLE-- [fill = 0]
+                  00014200    0000000c     FreeRTOS_IP.obj (.text:FreeRTOS_IsNetworkUp)
+                  0001420c    00000004     --HOLE-- [fill = 0]
+                  00014210    0000000c     FreeRTOS_DNS.obj (.text:FreeRTOS_gethostbyname)
+                  0001421c    0000000c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : SemaphoreP_freertos.obj (.text:SemaphoreP_delete)
+                  00014228    0000000c     rtsv7M4_T_le_v4SPD16_eabi.lib : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
+                  00014234    00000004     --HOLE-- [fill = 0]
+                  00014238    0000000c     FreeRTOS_DHCP.obj (.text:eGetDHCPState)
+                  00014244    00000004     --HOLE-- [fill = 0]
+                  00014248    0000000c     timeconvert.obj (.text:get_timestring)
+                  00014254    00000004     --HOLE-- [fill = 0]
+                  00014258    0000000c     main.obj (.text:led_off)
+                  00014264    00000004     --HOLE-- [fill = 0]
+                  00014268    0000000c     main.obj (.text:led_on)
+                  00014274    00000004     --HOLE-- [fill = 0]
+                  00014278    0000000c     FreeRTOS_IP.obj (.text:prvHandleEthernetPacket)
+                  00014284    00000004     --HOLE-- [fill = 0]
+                  00014288    0000000c     main.obj (.text:start_blink_task)
+                  00014294    0000000c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:uxTaskGetNumberOfTasks)
+                  000142a0    0000000c     FreeRTOS_DHCP.obj (.text:vCastConstPointerTo_DHCPMessage_IPv4_t)
+                  000142ac    00000004     --HOLE-- [fill = 0]
+                  000142b0    0000000c     FreeRTOS_DNS.obj (.text:vCastConstPointerTo_DNSMessage_t)
+                  000142bc    00000004     --HOLE-- [fill = 0]
+                  000142c0    0000000c     FreeRTOS_IP.obj (.text:vCastConstPointerTo_EthernetHeader_t)
+                  000142cc    00000004     --HOLE-- [fill = 0]
+                  000142d0    0000000c     FreeRTOS_TCP_IP.obj (.text:vCastConstPointerTo_IPHeader_t)
+                  000142dc    00000004     --HOLE-- [fill = 0]
+                  000142e0    0000000c     FreeRTOS_IP.obj (.text:vCastConstPointerTo_IPPacket_t)
+                  000142ec    00000004     --HOLE-- [fill = 0]
+                  000142f0    0000000c     FreeRTOS_TCP_IP.obj (.text:vCastConstPointerTo_ProtocolHeaders_t)
+                  000142fc    00000004     --HOLE-- [fill = 0]
+                  00014300    0000000c     FreeRTOS_IP.obj (.text:vCastConstPointerTo_ProtocolPacket_t)
+                  0001430c    00000004     --HOLE-- [fill = 0]
+                  00014310    0000000c     FreeRTOS_TCP_IP.obj (.text:vCastConstPointerTo_TCPPacket_t)
+                  0001431c    00000004     --HOLE-- [fill = 0]
+                  00014320    0000000c     FreeRTOS_IP.obj (.text:vCastConstPointerTo_UDPPacket_t)
+                  0001432c    00000004     --HOLE-- [fill = 0]
+                  00014330    0000000c     FreeRTOS_UDP_IP.obj (.text:vCastConstPointerTo_UDPPacket_t)
+                  0001433c    00000004     --HOLE-- [fill = 0]
+                  00014340    0000000c     FreeRTOS_ARP.obj (.text:vCastPointerTo_ARPPacket_t)
+                  0001434c    00000004     --HOLE-- [fill = 0]
+                  00014350    0000000c     FreeRTOS_IP.obj (.text:vCastPointerTo_ARPPacket_t)
+                  0001435c    00000004     --HOLE-- [fill = 0]
+                  00014360    0000000c     FreeRTOS_DHCP.obj (.text:vCastPointerTo_DHCPMessage_IPv4_t)
+                  0001436c    00000004     --HOLE-- [fill = 0]
+                  00014370    0000000c     FreeRTOS_DNS.obj (.text:vCastPointerTo_DNSAnswerRecord_t)
+                  0001437c    00000004     --HOLE-- [fill = 0]
+                  00014380    0000000c     FreeRTOS_DNS.obj (.text:vCastPointerTo_DNSMessage_t)
+                  0001438c    00000004     --HOLE-- [fill = 0]
+                  00014390    0000000c     FreeRTOS_DNS.obj (.text:vCastPointerTo_DNSTail_t)
+                  0001439c    00000004     --HOLE-- [fill = 0]
+                  000143a0    0000000c     FreeRTOS_IP.obj (.text:vCastPointerTo_EthernetHeader_t)
+                  000143ac    00000004     --HOLE-- [fill = 0]
+                  000143b0    0000000c     FreeRTOS_IP.obj (.text:vCastPointerTo_FreeRTOS_Socket_t)
+                  000143bc    00000004     --HOLE-- [fill = 0]
+                  000143c0    0000000c     FreeRTOS_Sockets.obj (.text:vCastPointerTo_FreeRTOS_Socket_t)
+                  000143cc    00000004     --HOLE-- [fill = 0]
+                  000143d0    0000000c     FreeRTOS_TCP_IP.obj (.text:vCastPointerTo_FreeRTOS_Socket_t)
+                  000143dc    00000004     --HOLE-- [fill = 0]
+                  000143e0    0000000c     FreeRTOS_IP.obj (.text:vCastPointerTo_ICMPPacket_t)
+                  000143ec    00000004     --HOLE-- [fill = 0]
+                  000143f0    0000000c     FreeRTOS_IP.obj (.text:vCastPointerTo_IPPacket_t)
+                  000143fc    00000004     --HOLE-- [fill = 0]
+                  00014400    0000000c     FreeRTOS_DNS.obj (.text:vCastPointerTo_LLMNRAnswer_t)
+                  0001440c    00000004     --HOLE-- [fill = 0]
+                  00014410    0000000c     FreeRTOS_DNS.obj (.text:vCastPointerTo_NBNSAnswer_t)
+                  0001441c    00000004     --HOLE-- [fill = 0]
+                  00014420    0000000c     FreeRTOS_IP.obj (.text:vCastPointerTo_NetworkBufferDescriptor_t)
+                  0001442c    00000004     --HOLE-- [fill = 0]
+                  00014430    0000000c     FreeRTOS_Sockets.obj (.text:vCastPointerTo_NetworkBufferDescriptor_t)
+                  0001443c    00000004     --HOLE-- [fill = 0]
+                  00014440    0000000c     FreeRTOS_TCP_IP.obj (.text:vCastPointerTo_ProtocolHeaders_t)
+                  0001444c    00000004     --HOLE-- [fill = 0]
+                  00014450    0000000c     FreeRTOS_IP.obj (.text:vCastPointerTo_ProtocolPacket_t)
+                  0001445c    00000004     --HOLE-- [fill = 0]
+                  00014460    0000000c     FreeRTOS_IP.obj (.text:vCastPointerTo_SocketSelect_t)
+                  0001446c    00000004     --HOLE-- [fill = 0]
+                  00014470    0000000c     FreeRTOS_Sockets.obj (.text:vCastPointerTo_StreamBuffer_t)
+                  0001447c    00000004     --HOLE-- [fill = 0]
+                  00014480    0000000c     FreeRTOS_TCP_IP.obj (.text:vCastPointerTo_TCPPacket_t)
+                  0001448c    00000004     --HOLE-- [fill = 0]
+                  00014490    0000000c     FreeRTOS_TCP_WIN.obj (.text:vCastPointerTo_TCPSegment_t)
+                  0001449c    00000004     --HOLE-- [fill = 0]
+                  000144a0    0000000c     FreeRTOS_DNS.obj (.text:vCastPointerTo_UDPPacket_t)
+                  000144ac    00000004     --HOLE-- [fill = 0]
+                  000144b0    0000000c     FreeRTOS_UDP_IP.obj (.text:vCastPointerTo_UDPPacket_t)
+                  000144bc    0000000c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.text:vTaskMissedYield)
+                  000144c8    0000000c     FreeRTOS_IP.obj (.text:xIPIsNetworkTaskReady)
+                  000144d4    0000000a     drivers_msp432e4.aem4f : ADC.oem4f (.text:ADC_Params_init)
+                  000144de    0000000a                            : ADC.oem4f (.text:ADC_convert)
+                  000144e8    0000000a                            : UART.oem4f (.text:UART_read)
+                  000144f2    0000000a                            : UART.oem4f (.text:UART_writePolling)
+                  000144fc    00000004     --HOLE-- [fill = 0]
+                  00014500    0000000a     NetworkMiddleware.obj (.text:pingReply)
+                  0001450a    0000000a     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : PowerMSP432E4_freertos.obj (.text:vPortSuppressTicksAndSleep)
+                  00014514    00000008     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.text:readSemCallback)
+                  0001451c    00000008                            : UARTMSP432E4.oem4f (.text:writeSemCallback)
+                  00014524    00000004     --HOLE-- [fill = 0]
+                  00014528    00000002     ti_drivers_config.obj (.text:Board_initHook)
+
+.const     0    0001452c    00000890     
+                  0001452c    000001b0     msp432e4_driverlib.a : sysctl.o (.const:g_pppui32XTALtoVCO)
+                  000146dc    00000101     rtsv7M4_T_le_v4SPD16_eabi.lib : ctype.c.obj (.const:.string:_ctypes_)
+                  000147dd    00000003     drivers_msp432e4.aem4f : GPIOMSP432E4.oem4f (.const:.string:inPinTypes)
+                  000147e0    0000009c     msp432e4_driverlib.a : interrupt.o (.const:g_pui32Regs)
+                  0001487c    00000090     cli.obj (.const:.string)
+                  0001490c    0000004c     rtsv7M4_T_le_v4SPD16_eabi.lib : asctime.c.obj (.const:$O1$$)
+                  00014958    0000004c                                   : asctime.c.obj (.const:.string)
+                  000149a4    00000048     msp432e4_driverlib.a : gpio.o (.const:g_pui32GPIOBaseAddrs)
+                  000149ec    00000048     drivers_msp432e4.aem4f : GPIOMSP432E4.oem4f (.const:gpioBaseAddresses)
+                  00014a34    00000048                            : GPIOMSP432E4.oem4f (.const:powerMgrIds)
+                  00014a7c    00000038     FreeRTOS_CLI.obj (.const:.string)
+                  00014ab4    00000030     webserver.obj (.const:.string)
+                  00014ae4    00000030     msp432e4_driverlib.a : sysctl.o (.const:g_sXTALtoMEMTIM)
+                  00014b14    0000002c     ti_drivers_config.obj (.const:uartMSP432E4HWAttrs)
+                  00014b40    00000028     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.const:UARTMSP432E4_fxnTable)
+                  00014b68    00000028     msp432e4_driverlib.a : sysctl.o (.const:g_pui32Xtals)
+                  00014b90    00000026     FreeRTOS_ARP.obj (.const:.string:xDefaultPartARPPacketHeader$1)
+                  00014bb6    00000002     --HOLE-- [fill = 0]
+                  00014bb8    00000024     drivers_msp432e4.aem4f : UART.oem4f (.const:UART_defaultParams)
+                  00014bdc    00000020                            : GPIOMSP432E4.oem4f (.const:.string:gpioInterruptVectors)
+                  00014bfc    00000020                            : UARTMSP432E4.oem4f (.const:staticFxnTable)
+                  00014c1c    00000019     FreeRTOS_DHCP.obj (.const:.string:ucDHCPRequestOptions$1)
+                  00014c35    00000003     --HOLE-- [fill = 0]
+                  00014c38    00000018     drivers_msp432e4.aem4f : ADCMSP432E4.oem4f (.const:ADCMSP432E4_fxnTable)
+                  00014c50    00000018     msp432e4_driverlib.a : emac.o (.const:g_pi16MIIClockDiv)
+                  00014c68    00000014     ti_drivers_config.obj (.const:GPIOMSP432E4_config)
+                  00014c7c    00000014     msp432e4_driverlib.a : interrupt.o (.const:g_pui32Dii16Regs)
+                  00014c90    00000014                          : interrupt.o (.const:g_pui32EnRegs)
+                  00014ca4    00000014     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.const:parityType)
+                  00014cb8    00000012     FreeRTOS_DHCP.obj (.const:.string:ucDHCPDiscoverOptions$2)
+                  00014cca    00000002     --HOLE-- [fill = 0]
+                  00014ccc    00000010     ti_drivers_config.obj (.const:ADCMSP432E4HWAttrs)
+                  00014cdc    00000010     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.const:dataLength)
+                  00014cec    00000010     FreeRTOS_CLI.obj (.const:xHelpCommand)
+                  00014cfc    00000010     cli.obj (.const:xInfoCommand$1)
+                  00014d0c    00000010     cli.obj (.const:xprintNetworkTime$3)
+                  00014d1c    00000010     cli.obj (.const:xprintTasksCommand$2)
+                  00014d2c    0000000c     ti_drivers_config.obj (.const:ADC_config)
+                  00014d38    0000000c     ti_drivers_config.obj (.const:UART_config)
+                  00014d44    0000000c     FreeRTOS_DNS.obj (.const:xDefaultPartDNSHeader$1)
+                  00014d50    00000008     FreeRTOS_Sockets.obj (.const:$P$T0$1)
+                  00014d58    00000008     drivers_msp432e4.aem4f : ADC.oem4f (.const:ADC_defaultParams)
+                  00014d60    00000008     ti_drivers_config.obj (.const:PowerMSP432E4_config)
+                  00014d68    00000008     drivers_msp432e4.aem4f : ADCMSP432E4.oem4f (.const:adcInterrupts)
+                  00014d70    00000008     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : port.obj (.const)
+                  00014d78    00000008     msp432e4_driverlib.a : sysctl.o (.const:g_pui32VCOFrequencies)
+                  00014d80    00000008     drivers_msp432e4.aem4f : UARTMSP432E4.oem4f (.const:stopBits)
+                  00014d88    00000008     FreeRTOS_IP.obj (.const:xNetworkDownEvent$1)
+                  00014d90    00000007     drivers_msp432e4.aem4f : GPIOMSP432E4.oem4f (.const:.string:outPinStrengths)
+                  00014d97    00000006                            : GPIOMSP432E4.oem4f (.const:.string:interruptType)
+                  00014d9d    00000006     FreeRTOS_IP.obj (.const:xBroadcastMACAddress)
+                  00014da3    00000006     FreeRTOS_DNS.obj (.const:xLLMNR_MacAdress)
+                  00014da9    00000005     ti_drivers_config.obj (.const)
+                  00014dae    00000004     drivers_msp432e4.aem4f : GPIOMSP432E4.oem4f (.const:.string:outPinTypes)
+                  00014db2    00000002     --HOLE-- [fill = 0]
+                  00014db4    00000004     BufferAllocation_2.obj (.const)
+                  00014db8    00000004     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.const)
+
+.cinit     0    00014dc0    00000158     
+                  00014dc0    00000120     (.cinit..data.load) [load image, compression = lzss]
+                  00014ee0    0000000c     (__TI_handler_table)
+                  00014eec    00000004     --HOLE-- [fill = 0]
+                  00014ef0    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  00014ef8    00000008     (.cinit..vtable.load) [load image, compression = zero_init]
+                  00014f00    00000018     (__TI_cinit_table)
+
+.init_array 
+*          0    00000000    00000000     UNINITIALIZED
+
+.vtable    0    20000000    0000026c     UNINITIALIZED
+                  20000000    0000026c     msp432e4_driverlib.a : interrupt.o (.vtable)
+
+.bss       0    2000026c    00030b00     UNINITIALIZED
+                  2000026c    0002c000     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : heap_4.obj (.bss:ucHeap)
+                  2002c26c    00003000     (.common:ucg_ppui8RxBuffer)
+                  2002f26c    00000870     BufferAllocation_2.obj (.bss:xNetworkBufferDescriptors)
+                  2002fadc    00000400     cli.obj (.bss:pcInputString$4)
+                  2002fedc    00000400     cli.obj (.bss:pcOutputString$5)
+                  200302dc    00000400     cli.obj (.bss:pcWriteBufferLocal)
+                  200306dc    00000100     (.common:g_psRxDescriptor)
+                  200307dc    00000100     (.common:g_psTxDescriptor)
+                  200308dc    000000c8     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.bss:pxReadyTasksLists)
+                  200309a4    00000090     drivers_msp432e4.aem4f : GPIOMSP432E4.oem4f (.bss:gpioCallbackInfo)
+                  20030a34    00000070     FreeRTOS_DNS.obj (.bss:xDNSCache)
+                  20030aa4    00000064     (.common:uartMSP432E4Objects)
+                  20030b08    00000048     FreeRTOS_ARP.obj (.bss:xARPCache)
+                  20030b50    00000020     NetworkMiddleware.obj (.bss:DEV_NAME)
+                  20030b70    00000020     ident.obj (.bss:ident_str)
+                  20030b90    00000020     ti_drivers_config.obj (.bss:uartMSP432E4RingBuffer0)
+                  20030bb0    00000020     FreeRTOS_DHCP.obj (.bss:xDHCPData)
+                  20030bd0    0000001c     rtsv7M4_T_le_v4SPD16_eabi.lib : asctime.c.obj (.bss:time_buf)
+                  20030bec    00000014     FreeRTOS_IP.obj (.bss:xARPTimer)
+                  20030c00    00000014     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : timers.obj (.bss:xActiveTimerList1)
+                  20030c14    00000014                                                     : timers.obj (.bss:xActiveTimerList2)
+                  20030c28    00000014     FreeRTOS_IP.obj (.bss:xDHCPTimer)
+                  20030c3c    00000014     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.bss:xDelayedTaskList1)
+                  20030c50    00000014                                                     : tasks.obj (.bss:xDelayedTaskList2)
+                  20030c64    00000014     BufferAllocation_2.obj (.bss:xFreeBuffersList)
+                  20030c78    00000014     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.bss:xPendingReadyList)
+                  20030c8c    00000014     FreeRTOS_TCP_WIN.obj (.bss:xSegmentList)
+                  20030ca0    00000014     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.bss:xSuspendedTaskList)
+                  20030cb4    00000014     FreeRTOS_IP.obj (.bss:xTCPTimer)
+                  20030cc8    00000014     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.bss:xTasksWaitingTermination)
+                  20030cdc    00000014     (.common:xBoundTCPSocketsList)
+                  20030cf0    00000014     (.common:xBoundUDPSocketsList)
+                  20030d04    00000010     NetworkInterface.obj (.bss:configLocal)
+                  20030d14    0000000c     (.common:ad)
+                  20030d20    00000008     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.bss)
+                  20030d28    00000008                                                     : timers.obj (.bss)
+                  20030d30    00000008                                                     : heap_4.obj (.bss:xStart)
+                  20030d38    00000004     BufferAllocation_2.obj (.bss)
+                  20030d3c    00000004     FreeRTOS_DHCP.obj (.bss)
+                  20030d40    00000004     FreeRTOS_IP.obj (.bss)
+                  20030d44    00000004     NetworkMiddleware.obj (.bss)
+                  20030d48    00000004     drivers_msp432e4.aem4f : GPIOMSP432E4.oem4f (.bss)
+                  20030d4c    00000004     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : aeabi_portable.obj (.bss:main_reent)
+                  20030d50    00000004     (.common:ADCMSP432E4Objects)
+                  20030d54    00000004     (.common:md)
+                  20030d58    00000004     (.common:ud)
+                  20030d5c    00000004     (.common:ulg_ui32RxDescIndex)
+                  20030d60    00000004     (.common:ulg_ui32TxDescIndex)
+                  20030d64    00000004     (.common:xQueueRX)
+                  20030d68    00000004     (.common:xQueueTX)
+
+.data      0    20030d6c    00000abc     UNINITIALIZED
+                  20030d6c    00000800     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : HwiPMSP432E4_freertos.obj (.data:HwiP_dispatchTable)
+                  2003156c    0000016c     drivers_msp432e4.aem4f : PowerMSP432E4.oem4f (.data:PowerMSP432E4_module)
+                  200316d8    00000034     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : tasks.obj (.data)
+                  2003170c    0000001c     FreeRTOS_IP.obj (.data)
+                  20031728    0000001c     NetworkInterface.obj (.data)
+                  20031744    00000018     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : heap_4.obj (.data)
+                  2003175c    00000018                                                     : port.obj (.data)
+                  20031774    00000018     FreeRTOS_UDP_IP.obj (.data:xDefaultPartUDPPacketHeader)
+                  2003178c    00000014     FreeRTOS_IP.obj (.data:xDefaultAddressing)
+                  200317a0    00000014     FreeRTOS_IP.obj (.data:xNetworkAddressing)
+                  200317b4    0000000c     FreeRTOS_CLI.obj (.data)
+                  200317c0    0000000c     NetworkMiddleware.obj (.data)
+                  200317cc    0000000c     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : timers.obj (.data)
+                  200317d8    00000008     FreeRTOS_TCP_WIN.obj (.data)
+                  200317e0    00000008     drivers_msp432e4.aem4f : ADCMSP432E4.oem4f (.data)
+                  200317e8    00000008                            : ADCMSP432E4.oem4f (.data:globalMutex)
+                  200317f0    00000008     FreeRTOS_CLI.obj (.data:xRegisteredCommands)
+                  200317f8    00000005     drivers_msp432e4.aem4f : GPIOMSP432E4.oem4f (.data)
+                  200317fd    00000001                            : ADC.oem4f (.data)
+                  200317fe    00000001                            : UART.oem4f (.data)
+                  200317ff    00000001     --HOLE--
+                  20031800    00000004     BufferAllocation_2.obj (.data)
+                  20031804    00000004     FreeRTOS_ARP.obj (.data)
+                  20031808    00000004     FreeRTOS_DNS.obj (.data)
+                  2003180c    00000004     FreeRTOS_Sockets.obj (.data)
+                  20031810    00000004     cli.obj (.data)
+                  20031814    00000004     freertos_builds_MSP_EXP432E401Y_release_ccs.lib : ClockP_freertos.obj (.data)
+                  20031818    00000004                                                     : HwiPMSP432E4_freertos.obj (.data)
+                  2003181c    00000004     ti_drivers_config.obj (.data:gpioCallbackFunctions)
+                  20031820    00000004     ti_drivers_config.obj (.data:gpioPinConfigs)
+                  20031824    00000004     webserver.obj (.data)
+
+.stack     0    2003fc00    00000400     UNINITIALIZED
+                  2003fc00    00000004     rtsv7M4_T_le_v4SPD16_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  2003fc04    000003fc     --HOLE--
+
+__llvm_prf_cnts 
+*          0    20000000    00000000     UNINITIALIZED
+
+.binit     0    00000000    00000000     
+
+MODULE SUMMARY
+
+       Module                       code    ro data   rw data
+       ------                       ----    -------   -------
+    .\free-rtos-plus\
+       FreeRTOS_TCP_IP.obj          9658    0         0      
+       FreeRTOS_Sockets.obj         7742    8         44     
+       FreeRTOS_DNS.obj             4638    18        116    
+       FreeRTOS_IP.obj              4272    14        132    
+       FreeRTOS_TCP_WIN.obj         4036    0         28     
+       BufferAllocation_2.obj       672     4         2188   
+       FreeRTOS_DHCP.obj            2706    43        36     
+       FreeRTOS_ARP.obj             1956    38        76     
+       FreeRTOS_CLI.obj             850     72        20     
+       FreeRTOS_Stream_Buffer.obj   732     0         0      
+       FreeRTOS_UDP_IP.obj          664     0         24     
+    +--+----------------------------+-------+---------+---------+
+       Total:                       37926   197       2664   
+                                                             
+    .\src\
+       NetworkInterface.obj         3188    0         12860  
+       cli.obj                      796     192       3076   
+       network_time.obj             956     0         0      
+       timeconvert.obj              822     0         0      
+       NetworkMiddleware.obj        699     0         48     
+       ident.obj                    420     0         32     
+       webserver.obj                360     48        4      
+       main.obj                     395     0         4      
+       uart_debug.obj               240     0         4      
+       adc_rand.obj                 176     0         12     
+       string_helper.obj            140     0         0      
+       helper_math.obj              82      0         0      
+       main_thread.obj              72      0         0      
+       gpio.obj                     16      0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       8362    240       16040  
+                                                             
+    .\syscfg\
+       ti_drivers_config.obj        56      117       144    
+    +--+----------------------------+-------+---------+---------+
+       Total:                       56      117       144    
+                                                             
+    C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/devices/msp432e4/driverlib/lib/ccs/m4f/msp432e4_driverlib.a
+       sysctl.o                     1658    528       0      
+       interrupt.o                  478     196       620    
+       emac.o                       1148    24        0      
+       gpio.o                       1052    72        0      
+       adc.o                        610     0         0      
+       uart.o                       588     0         0      
+       flash.o                      40      0         0      
+       cpu.o                        12      0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       5586    820       620    
+                                                             
+    C:/ti/simplelink_msp432e4_sdk_4_20_00_12/source/ti/drivers/lib/drivers_msp432e4.aem4f
+       UARTMSP432E4.oem4f           2914    116       0      
+       GPIOMSP432E4.oem4f           956     196       153    
+       ADCMSP432E4.oem4f            706     32        16     
+       PowerMSP432E4.oem4f          336     0         364    
+       UART.oem4f                   176     36        1      
+       RingBuf.oem4f                198     0         0      
+       ADC.oem4f                    152     8         1      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       5438    388       535    
+                                                             
+    C:\ti\ccs1031\ccs\tools\compiler\ti-cgt-arm_20.2.4.LTS\lib\rtsv7M4_T_le_v4SPD16_eabi.lib
+       _printfi.c.obj               4851    0         0      
+       fd_add_t2.asm.obj            438     0         0      
+       fd_div_t2.asm.obj            310     0         0      
+       asctime.c.obj                108     152       28     
+       s_scalbn.c.obj               272     0         0      
+       fd_cmp_t2.asm.obj            268     0         0      
+       ctype.c.obj                  0       257       0      
+       fd_mul_t2.asm.obj            252     0         0      
+       memcpy_t2.asm.obj            156     0         0      
+       ull_div_t2.asm.obj           150     0         0      
+       snprintf.c.obj               148     0         0      
+       vsnprintf.c.obj              136     0         0      
+       memset_t2.asm.obj            122     0         0      
+       ll_div_t2.asm.obj            110     0         0      
+       copy_decompress_lzss.c.obj   104     0         0      
+       s_frexp.c.obj                100     0         0      
+       _ltoa.c.obj                  84      0         0      
+       atoi.c.obj                   76      0         0      
+       fd_toi_t2.asm.obj            72      0         0      
+       autoinit.c.obj               68      0         0      
+       strncpy.c.obj                54      0         0      
+       boot_cortex_m.c.obj          52      0         0      
+       i_tofd_t2.asm.obj            46      0         0      
+       strncmp.c.obj                44      0         0      
+       memmov.c.obj                 40      0         0      
+       memcmp.c.obj                 36      0         0      
+       memccpy.c.obj                28      0         0      
+       s_copysign.c.obj             26      0         0      
+       ll_mul_t2.asm.obj            24      0         0      
+       strcmp.c.obj                 24      0         0      
+       strchr.c.obj                 22      0         0      
+       strcpy.c.obj                 20      0         0      
+       strlen.c.obj                 20      0         0      
+       wcslen.c.obj                 18      0         0      
+       isspace.c.obj                16      0         0      
+       copy_decompress_none.c.obj   14      0         0      
+       copy_zero_init.c.obj         12      0         0      
+       exit.c.obj                   4       0         0      
+       pre_init.c.obj               4       0         0      
+       div0.asm.obj                 2       0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       8331    409       28     
+                                                             
+    K:/OneDrive/Projects/Chione/software/always-on/freertos_builds_MSP_EXP432E401Y_release_ccs/Debug/freertos_builds_MSP_EXP432E401Y_release_ccs.lib
+       heap_4.obj                   952     0         180256 
+       tasks.obj                    6712    4         360    
+       queue.obj                    3388    0         0      
+       HwiPMSP432E4_freertos.obj    332     0         2052   
+       timers.obj                   1562    0         60     
+       event_groups.obj             872     0         0      
+       port.obj                     732     8         24     
+       ClockP_freertos.obj          630     0         4      
+       startup_msp432e4_ccs.obj     50      512       0      
+       list.obj                     298     0         0      
+       portasm.obj                  218     0         0      
+       SemaphoreP_freertos.obj      142     0         0      
+       PTLS.obj                     70      0         0      
+       aeabi_portable.obj           64      0         4      
+       PowerMSP432E4_freertos.obj   26      0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       16048   524       182760 
+                                                             
+       Stack:                       0       0         1024   
+       Linker Generated:            0       340       0      
+    +--+----------------------------+-------+---------+---------+
+       Grand Total:                 81747   3035      203815 
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 00014f00 records: 3, size/record: 8, table size: 24
+	.data: load addr=00014dc0, load size=00000120 bytes, run addr=20030d6c, run size=00000abc bytes, compression=lzss
+	.bss: load addr=00014ef0, load size=00000008 bytes, run addr=2000026c, run size=00030b00 bytes, compression=zero_init
+	.vtable: load addr=00014ef8, load size=00000008 bytes, run addr=20000000, run size=0000026c bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 00014ee0 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_zero_init
+	index: 1, handler: __TI_decompress_lzss
+	index: 2, handler: __TI_decompress_none
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                             
+-------   ----                                             
+00013e51  ADCIntClear                                      
+00013cfb  ADCIntDisableEx                                  
+0001095b  ADCIntStatus                                     
+00014ccc  ADCMSP432E4HWAttrs                               
+20030d50  ADCMSP432E4Objects                               
+000101a1  ADCMSP432E4_close                                
+0000394b  ADCMSP432E4_control                              
+0000c115  ADCMSP432E4_convert                              
+000139b1  ADCMSP432E4_convertToMicroVolts                  
+00014c38  ADCMSP432E4_fxnTable                             
+00010d25  ADCMSP432E4_init                                 
+0000a5c1  ADCMSP432E4_open                                 
+00012fd5  ADCProcessorTrigger                              
+0001106d  ADCSequenceConfigure                             
+00011bb5  ADCSequenceDataGet                               
+00013b25  ADCSequenceDisable                               
+00013b3f  ADCSequenceEnable                                
+00009f51  ADCSequenceStepConfigure                         
+000144d5  ADC_Params_init                                  
+00014d2c  ADC_config                                       
+000144df  ADC_convert                                      
+00014daa  ADC_count                                        
+00014d58  ADC_defaultParams                                
+00011879  ADC_init                                         
+00011c7d  ADC_open                                         
+000124c9  Board_init                                       
+00014529  Board_initHook                                   
+00002dc5  C$$EXIT                                          
+00014da9  CONFIG_ADC_0_CONST                               
+00014dab  CONFIG_GPIO_LED_0_CONST                          
+00014dac  CONFIG_UART_0_CONST                              
+000141ef  CPUcpsie                                         
+000139cd  ClockP_Params_init                               
+00012081  ClockP_callbackFxn                               
+0000d64d  ClockP_create                                    
+00010d79  ClockP_delete                                    
+00013735  ClockP_getCpuFreq                                
+00013e67  ClockP_setTimeout                                
+00013859  ClockP_start                                     
+0000fee5  ClockP_stop                                      
+00011bf7  EMACAddrFilterSet                                
+0001055d  EMACAddrSet                                      
+000110bd  EMACConfigSet                                    
+00013755  EMACFrameFilterSet                               
+0000a86d  EMACInit                                         
+000109b3  EMACIntClear                                     
+000103e1  EMACIntEnable                                    
+00013e7d  EMACIntRegister                                  
+000105b9  EMACIntStatus                                    
+0000f921  EMACPHYConfigSet                                 
+0001129f  EMACPHYRead                                      
+0001345d  EMACReset                                        
+00013f37  EMACRxDMADescriptorListSet                       
+0001347f  EMACRxEnable                                     
+00014181  EMACStatusGet                                    
+00013f4b  EMACTxDMADescriptorListSet                       
+0001403d  EMACTxDMAPollDemand                              
+000134a1  EMACTxEnable                                     
+00012ffd  FlashUserGet                                     
+000045a9  FreeRTOS_CLIProcessCommand                       
+0000e239  FreeRTOS_CLIRegisterCommand                      
+00013f61  FreeRTOS_ClearARP                                
+00010a11  FreeRTOS_GetAddressConfiguration                 
+000034f1  FreeRTOS_IPInit                                  
+00014201  FreeRTOS_IsNetworkUp                             
+00012501  FreeRTOS_NetworkDown                             
+0000e6b1  FreeRTOS_OutputARPRequest                        
+000140c1  FreeRTOS_ReleaseUDPPayloadBuffer                 
+00007299  FreeRTOS_accept                                  
+0000b299  FreeRTOS_bind                                    
+000118c1  FreeRTOS_closesocket                             
+00013879  FreeRTOS_dnslookup                               
+00014211  FreeRTOS_gethostbyname                           
+00013b59  FreeRTOS_inet_addr                               
+00008bd1  FreeRTOS_inet_ntoa                               
+00012571  FreeRTOS_inet_ntop                               
+00012539  FreeRTOS_inet_ntop4                              
+00009369  FreeRTOS_inet_pton4                              
+0000b8e9  FreeRTOS_listen                                  
+00005429  FreeRTOS_recv                                    
+00007f39  FreeRTOS_recvfrom                                
+00012141  FreeRTOS_rx_size                                 
+00006e81  FreeRTOS_send                                    
+00008631  FreeRTOS_sendto                                  
+00001c81  FreeRTOS_setsockopt                              
+0000fd49  FreeRTOS_shutdown                                
+00009031  FreeRTOS_socket                                  
+00012181  FreeRTOS_tx_size                                 
+00011909  FreeRTOS_tx_space                                
+00010615  GPIODirModeSet                                   
+00013f75  GPIOIntClear                                     
+000134c3  GPIOIntStatus                                    
+0000d457  GPIOIntTypeSet                                   
+00014c68  GPIOMSP432E4_config                              
+00013f89  GPIOMSP432E4_getGpioBaseAddr                     
+00013f9d  GPIOMSP432E4_getPowerResourceId                  
+00012a93  GPIOMSP432E4_undoPinConfig                       
+000032b5  GPIOPadConfigSet                                 
+0001194d  GPIOPinConfigure                                 
+0001327f  GPIOPinTypeADC                                   
+000132a3  GPIOPinTypeUART                                  
+00013775  GPIOPinWrite                                     
+0000fad5  GPIO_hwiIntFxn                                   
+0000cbb1  GPIO_init                                        
+00010a69  GPIO_setCallback                                 
+00006175  GPIO_setConfig                                   
+00010dcd  GPIO_write                                       
+000138b7  HwiP_Params_init                                 
+00010201  HwiP_create                                      
+0001404f  HwiP_delete                                      
+00012dc1  HwiP_disable                                     
+000115ed  HwiP_dispatch                                    
+20030d6c  HwiP_dispatchTable                               
+00013025  HwiP_inISR                                       
+00013795  HwiP_restore                                     
+0000ebf5  IntDisable                                       
+0000ec75  IntEnable                                        
+000140d1  IntMasterEnable                                  
+00010e21  IntPrioritySet                                   
+00010671  IntRegister                                      
+00013a05  IntUnregister                                    
+00013e93  PTLS_getBuf                                      
+00013ea9  PTLS_setBuf                                      
+00013c73  PTLS_taskDeleteHook                              
+00014d60  PowerMSP432E4_config                             
+2003156c  PowerMSP432E4_module                             
+000140e1  PowerMSP432E4_sleepPolicy                        
+00013d15  Power_idleFunc                                   
+0000ff49  Power_init                                       
+0000f98d  Power_releaseDependency                          
+0000fb3d  Power_setDependency                              
+00014061  RingBuf_construct                                
+00011cbd  RingBuf_get                                      
+0001418f  RingBuf_isFull                                   
+000137b5  RingBuf_peek                                     
+00011759  RingBuf_put                                      
+00012ded  SemaphoreP_createBinary                          
+0001421d  SemaphoreP_delete                                
+000126ef  SemaphoreP_pend                                  
+000134e5  SemaphoreP_post                                  
+00002589  SysCtlClockFreqSet                               
+00003b6b  SysCtlDelay                                      
+00012e19  SysCtlPeripheralClockGating                      
+00011cfd  SysCtlPeripheralDisable                          
+00011d3d  SysCtlPeripheralEnable                           
+00011d7d  SysCtlPeripheralPowerOff                         
+00011dbd  SysCtlPeripheralPowerOn                          
+00011991  SysCtlPeripheralPresent                          
+000119d5  SysCtlPeripheralReady                            
+0000e2c5  SysCtlPeripheralReset                            
+00011dfd  SysCtlPeripheralSleepDisable                     
+00011e3d  SysCtlPeripheralSleepEnable                      
+000138d5  UARTBusy                                         
+00013ebf  UARTCharGet                                      
+00013a21  UARTCharGetNonBlocking                           
+000138f3  UARTCharPut                                      
+000132c7  UARTCharPutNonBlocking                           
+00013911  UARTCharsAvail                                   
+0000f2d1  UARTConfigSetExpClk                              
+00012ac5  UARTDisable                                      
+000132eb  UARTEnable                                       
+00013d2d  UARTFIFOLevelSet                                 
+00013a3d  UARTFlowControlSet                               
+00014073  UARTIntClear                                     
+00013d45  UARTIntDisable                                   
+00013d5d  UARTIntEnable                                    
+0001392f  UARTIntStatus                                    
+0000bb29  UARTMSP432E4_close                               
+0000e083  UARTMSP432E4_control                             
+00014b40  UARTMSP432E4_fxnTable                            
+00000c4f  UARTMSP432E4_init                                
+00002299  UARTMSP432E4_open                                
+00011e7d  UARTMSP432E4_read                                
+000125a7  UARTMSP432E4_readCancel                          
+0000d6ed  UARTMSP432E4_readPolling                         
+0000db33  UARTMSP432E4_write                               
+00011635  UARTMSP432E4_writeCancel                         
+000112eb  UARTMSP432E4_writePolling                        
+000140f1  UARTRxErrorClear                                 
+00014085  UARTRxErrorGet                                   
+00013a59  UARTTxIntModeSet                                 
+00013d75  UART_Params_init                                 
+00014d38  UART_config                                      
+00014dad  UART_count                                       
+00014bb8  UART_defaultParams                               
+00011a19  UART_init                                        
+00011ebd  UART_open                                        
+000144e9  UART_read                                        
+000144f3  UART_writePolling                                
+20040000  __STACK_END                                      
+00000400  __STACK_SIZE                                     
+00014f00  __TI_CINIT_Base                                  
+00014f18  __TI_CINIT_Limit                                 
+00014ee0  __TI_Handler_Table_Base                          
+00014eec  __TI_Handler_Table_Limit                         
+00011aa1  __TI_auto_init_nobinit_nopinit                   
+0000fba5  __TI_decompress_lzss                             
+0001419d  __TI_decompress_none                             
+00010e75  __TI_ltoa                                        
+ffffffff  __TI_pprof_out_hndl                              
+00000201  __TI_printfi                                     
+ffffffff  __TI_prof_data_size                              
+ffffffff  __TI_prof_data_start                             
+00014dc0  __TI_static_base__                               
+00014229  __TI_zero_init                                   
+0000e849  __aeabi_cdcmpeq                                  
+0000e849  __aeabi_cdcmple                                  
+0000e8cf  __aeabi_cdrcmple                                 
+0001167d  __aeabi_d2iz                                     
+000057a7  __aeabi_dadd                                     
+00007ccd  __aeabi_ddiv                                     
+00009985  __aeabi_dmul                                     
+0000579d  __aeabi_dsub                                     
+00011efd  __aeabi_errno_addr                               
+00012d63  __aeabi_i2d                                      
+000034ef  __aeabi_idiv0                                    
+000034ef  __aeabi_ldiv0                                    
+0000f7cf  __aeabi_ldivmod                                  
+00013dd5  __aeabi_lmul                                     
+0000f0ed  __aeabi_memclr                                   
+0000f0ed  __aeabi_memclr4                                  
+0000f0ed  __aeabi_memclr8                                  
+0000d8c5  __aeabi_memcpy                                   
+0000d8c5  __aeabi_memcpy4                                  
+0000d8c5  __aeabi_memcpy8                                  
+0000f0ef  __aeabi_memset                                   
+0000f0ef  __aeabi_memset4                                  
+0000f0ef  __aeabi_memset8                                  
+0000dcff  __aeabi_uldivmod                                 
+ffffffff  __binit__                                        
+ffffffff  __c_args__                                       
+UNDEFED   __mpu_init                                       
+2003fc00  __stack                                          
+20000000  __start___llvm_prf_cnts                          
+20000000  __stop___llvm_prf_cnts                           
+00012725  _c_int00_noargs                                  
+000146dc  _ctypes_                                         
+UNDEFED   _system_post_cinit                               
+00001c7d  _system_pre_init                                 
+00002dc5  abort                                            
+20030d14  ad                                               
+0000f9f9  asctime                                          
+00011339  atoi                                             
+ffffffff  binit                                            
+00012b59  check_delay_dispersion                           
+00009781  check_ntp                                        
+00013051  cli_command_register                             
+00013c8d  copysign                                         
+00013c8d  copysignl                                        
+00007e09  eARPGetCacheEntry                                
+000082c1  eARPProcessPacket                                
+0000cdb9  eConsiderFrameForProcessing                      
+00014239  eGetDHCPState                                    
+0000a6a5  eTaskGetState                                    
+00009a81  epoch_to_time                                    
+0000ffad  frexp                                            
+0000ffad  frexpl                                           
+20000000  g_pfnRAMVectors                                  
+200306dc  g_psRxDescriptor                                 
+200307dc  g_psTxDescriptor                                 
+00012329  get_ctime_from_ntp                               
+00012911  get_delay_dispersion                             
+00008759  get_network_time                                 
+00012cd9  get_rand_adc_output                              
+00014249  get_timestring                                   
+0000e9e1  get_unix_time_from_ntp                           
+2003181c  gpioCallbackFunctions                            
+20031820  gpioPinConfigs                                   
+00014101  isspace                                          
+0000c3f9  lTCPAddRxdata                                    
+00003f99  lTCPWindowRxCheck                                
+000062f9  lTCPWindowTxAdd                                  
+00009145  ldexp                                            
+00009145  ldexpl                                           
+00014259  led_off                                          
+00014269  led_on                                           
+00013dbd  localProgramStart                                
+000130f1  main                                             
+20030d54  md                                               
+00013a75  memccpy                                          
+0001330f  memcmp                                           
+0000d8c5  memcpy                                           
+000130a1  memmove                                          
+0000f0f5  memset                                           
+00010fc9  ntohll                                           
+0000eef9  ntp_timestamp_to_unix_timestamp                  
+00011201  obtain_rand32                                    
+00013fb1  pcApplicationHostnameHook                        
+00014501  pingReply                                        
+00012e49  printInfo                                        
+0000f071  printNetworkTime                                 
+00013119  printTasks                                       
+00013951  print_debug                                      
+00013ca9  print_debug_char                                 
+00014171  print_prompt                                     
+00005b05  pvPortMalloc                                     
+000121f9  pvTaskGetThreadLocalStoragePointer               
+00013aad  pvTaskIncrementMutexHeldCount                    
+00012d35  pvTimerGetTimerID                                
+200316d8  pxCurrentTCB                                     
+00011421  pxDuplicateNetworkBufferWithDescriptor           
+00009471  pxGetNetworkBufferWithDescriptor                 
+00010321  pxPortInitialiseStack                            
+0000dd99  pxTCPSocketLookup                                
+000141d1  pxUDPPayloadBuffer_to_NetworkBuffer              
+00010c79  pxUDPSocketLookup                                
+00012949  read_debug_uart                                  
+00014099  resetISR                                         
+000140a4  resetVectorAddr                                  
+00000000  resetVectors                                     
+00009145  scalbn                                           
+00009145  scalbnl                                          
+00013971  set_ident_name                                   
+00012791  setup_adc_rand                                   
+00012981  setup_clocks                                     
+000127c9  setup_console                                    
+00014131  setup_gpio                                       
+00013359  setup_hardware                                   
+00011c39  setup_ident                                      
+00013439  setup_tasks                                      
+00010ac1  setup_uart_debug                                 
+00012ca9  setup_web                                        
+0000b699  setup_wired_ethernet                             
+000114b9  snprintf                                         
+00014289  start_blink_task                                 
+00013ed5  strchr                                           
+00013ded  strcmp                                           
+00013fd9  strcpy                                           
+00013991  string_comp                                      
+00013fed  strlen                                           
+00012e75  strncmp                                          
+00012613  strncpy                                          
+0000f841  trimwhitespace                                   
+20030aa4  uartMSP432E4Objects                              
+2002c26c  ucg_ppui8RxBuffer                                
+20030d58  ud                                               
+00013509  ulApplicationGetNextSequenceNumber               
+00012649  ulDNSHandlePacket                                
+00014d70  ulMaxSyscallInterruptPriority                    
+00012be9  ulNBNSHandlePacket                               
+0000ab1d  ulPortGetIPSR                                    
+000129b9  ulTCPWindowTxAck                                 
+000047a1  ulTCPWindowTxGet                                 
+000117e9  ulTCPWindowTxSack                                
+0000b825  ulTaskGenericNotifyTake                          
+20030d5c  ulg_ui32RxDescIndex                              
+20030d60  ulg_ui32TxDescIndex                              
+20031710  usPacketIdentifier                               
+000116c5  uxListRemove                                     
+00012f7d  uxQueueMessagesWaiting                           
+0000a3f1  uxStreamBufferAdd                                
+0000b021  uxStreamBufferGet                                
+00014295  uxTaskGetNumberOfTasks                           
+0000a131  uxTaskGetSystemState                             
+000130c9  uxTaskResetEventItemValue                        
+00014db8  uxTopUsedPriority                                
+00008f19  vARPAgeCache                                     
+0000ada1  vARPGenerateRequestPacket                        
+00003951  vARPRefreshCacheEntry                            
+00013ef1  vARPSendGratuitous                               
+00009e61  vApplicationIPNetworkEventHook                   
+00013671  vApplicationMallocFailedHook                     
+00013191  vApplicationStackOverflowHook                    
+00008ab1  vCommandConsoleTask                              
+00012459  vConvertOctetsToAddr                             
+0000c341  vCreateTCPServerSocketWeb                        
+000011e1  vDHCPProcess                                     
+00010ccf  vEventGroupDelete                                
+000123a9  vGetInternalNetworkInterfaceMSP432EConfigDefaults
+000131b9  vIPNetworkUpCalls                                
+00014001  vIPReloadDHCPTimer                               
+000128a9  vIPSetDHCPTimerEnableState                       
+00012c19  vListInitialise                                  
+00014151  vListInitialiseItem                              
+0000fe7f  vListInsert                                      
+00012235  vListInsertEnd                                   
+00012d91  vLoggingPrintf                                   
+00013ac9  vNetworkSocketsInit                              
+0000abd9  vPortEnableVFP                                   
+00011505  vPortEnterCritical                               
+00012c49  vPortExitCritical                                
+0000d1b9  vPortFree                                        
+0000ab95  vPortSVCHandler                                  
+00010b19  vPortSetupTimerInterrupt                         
+0000abb5  vPortStartFirstTask                              
+0001450b  vPortSuppressTicksAndSleep                       
+0000f431  vPortValidateInterruptPriority                   
+00007689  vProcessGeneratedUDPPacket                       
+00013ae9  vPublicGetMACAddr                                
+000131e1  vPublicSetupDeviceName                           
+00006fe1  vPublicSetupEMACNetwork                          
+0000e959  vPublicSetupFreeRTOSTasks                        
+0001337d  vQueueDelete                                     
+00010729  vQueueWaitForMessageRestricted                   
+00013f09  vReleaseNetworkBuffer                            
+0000f8b1  vReleaseNetworkBufferAndDescriptor               
+0000ea69  vReturnEthernetFrame                             
+00010789  vSetMultiCastIPv4MacAddress                      
+00008069  vSocketBind                                      
+0000d5a9  vSocketClose                                     
+00003d89  vSocketSelect                                    
+000104a1  vSocketWakeUpUser                                
+00005e51  vTCPStateChange                                  
+0000f6f1  vTCPWindowCreate                                 
+0000fa69  vTCPWindowDestroy                                
+0000d501  vTCPWindowInit                                   
+000107e5  vTaskDelay                                       
+00009885  vTaskDelete                                      
+00008509  vTaskGenericNotifyGiveFromISR                    
+0000be1d  vTaskGetInfo                                     
+0000b5d1  vTaskGetRunTimeStatsLocal                        
+000133c5  vTaskInternalSetTimeOutState                     
+000144bd  vTaskMissedYield                                 
+000128dd  vTaskPlaceOnEventList                            
+00012001  vTaskPlaceOnEventListRestricted                  
+0001013d  vTaskPlaceOnUnorderedEventList                   
+00009575  vTaskPriorityDisinheritAfterTimeout              
+0000cd0d  vTaskRemoveFromUnorderedEventList                
+0000d961  vTaskResume                                      
+00011551  vTaskSetThreadLocalStoragePointer                
+00012271  vTaskSetTimeOutState                             
+0000d9fd  vTaskStartScheduler                              
+00008ce9  vTaskSuspend                                     
+00014161  vTaskSuspendAll                                  
+0000aa31  vTaskSwitchContext                               
+00012041  vsnprintf                                        
+000140ab  wcslen                                           
+00013b09  xApplicationDNSQueryHook                         
+00012ea1  xApplicationGetRandomNumber                      
+20030cdc  xBoundTCPSocketsList                             
+20030cf0  xBoundUDPSocketsList                             
+00014d9d  xBroadcastMACAddress                             
+00014db4  xBufferAllocFixedSize                            
+2003178c  xDefaultAddressing                               
+20031774  xDefaultPartUDPPacketHeader                      
+000104ff  xEventGroupClearBits                             
+00013815  xEventGroupCreate                                
+00009b7b  xEventGroupSetBits                               
+00006d1d  xEventGroupWaitBits                              
+20031730  xHandleCheckLinkUpOrDown                         
+20031734  xHandleCheckNet                                  
+000144c9  xIPIsNetworkTaskReady                            
+000136c1  xIsCallingFromIPTask                             
+00013209  xIsDHCPSocket                                    
+00011831  xIsIPv4Multicast                                 
+00014da3  xLLMNR_MacAdress                                 
+200317a0  xNetworkAddressing                               
+00008e01  xNetworkBuffersInitialise                        
+2003170c  xNetworkEventQueue                               
+00013f21  xNetworkInterfaceInitialise                      
+0000dbd1  xNetworkInterfaceOutput                          
+0000ab35  xPortPendSVHandler                               
+0000b1c9  xPortStartScheduler                              
+00012ecd  xPortSysTickHandler                              
+00001941  xProcessReceivedTCPPacket                        
+00007a51  xProcessReceivedUDPPacket                        
+00010b71  xQueueCreateCountingSemaphore                    
+00012ef9  xQueueCreateMutex                                
+0000d261  xQueueGenericCreate                              
+0000c289  xQueueGenericReset                               
+000055e5  xQueueGenericSend                                
+00008195  xQueueGenericSendFromISR                         
+00009255  xQueueGiveFromISR                                
+20030d64  xQueueRX                                         
+00006475  xQueueReceive                                    
+00009c75  xQueueReceiveFromISR                             
+00004b51  xQueueSemaphoreTake                              
+20030d68  xQueueTX                                         
+00013231  xSendDHCPEvent                                   
+0000dec1  xSendEventStructToIPTask                         
+00013259  xSendEventToIPTask                               
+0000e591  xTCPCheckNewClient                               
+0000bf99  xTCPSocketCheck                                  
+0000a4d9  xTCPTimerCheck                                   
+200317dc  xTCPWindowLoggingLevel                           
+00012101  xTCPWindowRxEmpty                                
+00013e39  xTCPWindowTxDone                                 
+0000c569  xTCPWindowTxHasData                              
+0000c6d5  xTaskCheckForTimeOut                             
+0000f167  xTaskCreate                                      
+00005fe9  xTaskGenericNotify                               
+00014015  xTaskGetCurrentTaskHandle                        
+00012c79  xTaskGetSchedulerState                           
+00014029  xTaskGetTickCount                                
+000077cd  xTaskIncrementTick                               
+0000b369  xTaskPriorityDisinherit                          
+0000af4d  xTaskPriorityInherit                             
+0000d309  xTaskRemoveFromEventList                         
+00008995  xTaskResumeAll                                   
+20031728  xTaskToNotifyEthernetRX                          
+2003172c  xTaskToNotifyEthernetTX                          
+000122ed  xTimerCreate                                     
+00010f1d  xTimerCreateTimerTask                            
+0000eaed  xTimerGenericCommand                             
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                             
+-------   ----                                             
+00000000  resetVectors                                     
+00000201  __TI_printfi                                     
+00000400  __STACK_SIZE                                     
+00000c4f  UARTMSP432E4_init                                
+000011e1  vDHCPProcess                                     
+00001941  xProcessReceivedTCPPacket                        
+00001c7d  _system_pre_init                                 
+00001c81  FreeRTOS_setsockopt                              
+00002299  UARTMSP432E4_open                                
+00002589  SysCtlClockFreqSet                               
+00002dc5  C$$EXIT                                          
+00002dc5  abort                                            
+000032b5  GPIOPadConfigSet                                 
+000034ef  __aeabi_idiv0                                    
+000034ef  __aeabi_ldiv0                                    
+000034f1  FreeRTOS_IPInit                                  
+0000394b  ADCMSP432E4_control                              
+00003951  vARPRefreshCacheEntry                            
+00003b6b  SysCtlDelay                                      
+00003d89  vSocketSelect                                    
+00003f99  lTCPWindowRxCheck                                
+000045a9  FreeRTOS_CLIProcessCommand                       
+000047a1  ulTCPWindowTxGet                                 
+00004b51  xQueueSemaphoreTake                              
+00005429  FreeRTOS_recv                                    
+000055e5  xQueueGenericSend                                
+0000579d  __aeabi_dsub                                     
+000057a7  __aeabi_dadd                                     
+00005b05  pvPortMalloc                                     
+00005e51  vTCPStateChange                                  
+00005fe9  xTaskGenericNotify                               
+00006175  GPIO_setConfig                                   
+000062f9  lTCPWindowTxAdd                                  
+00006475  xQueueReceive                                    
+00006d1d  xEventGroupWaitBits                              
+00006e81  FreeRTOS_send                                    
+00006fe1  vPublicSetupEMACNetwork                          
+00007299  FreeRTOS_accept                                  
+00007689  vProcessGeneratedUDPPacket                       
+000077cd  xTaskIncrementTick                               
+00007a51  xProcessReceivedUDPPacket                        
+00007ccd  __aeabi_ddiv                                     
+00007e09  eARPGetCacheEntry                                
+00007f39  FreeRTOS_recvfrom                                
+00008069  vSocketBind                                      
+00008195  xQueueGenericSendFromISR                         
+000082c1  eARPProcessPacket                                
+00008509  vTaskGenericNotifyGiveFromISR                    
+00008631  FreeRTOS_sendto                                  
+00008759  get_network_time                                 
+00008995  xTaskResumeAll                                   
+00008ab1  vCommandConsoleTask                              
+00008bd1  FreeRTOS_inet_ntoa                               
+00008ce9  vTaskSuspend                                     
+00008e01  xNetworkBuffersInitialise                        
+00008f19  vARPAgeCache                                     
+00009031  FreeRTOS_socket                                  
+00009145  ldexp                                            
+00009145  ldexpl                                           
+00009145  scalbn                                           
+00009145  scalbnl                                          
+00009255  xQueueGiveFromISR                                
+00009369  FreeRTOS_inet_pton4                              
+00009471  pxGetNetworkBufferWithDescriptor                 
+00009575  vTaskPriorityDisinheritAfterTimeout              
+00009781  check_ntp                                        
+00009885  vTaskDelete                                      
+00009985  __aeabi_dmul                                     
+00009a81  epoch_to_time                                    
+00009b7b  xEventGroupSetBits                               
+00009c75  xQueueReceiveFromISR                             
+00009e61  vApplicationIPNetworkEventHook                   
+00009f51  ADCSequenceStepConfigure                         
+0000a131  uxTaskGetSystemState                             
+0000a3f1  uxStreamBufferAdd                                
+0000a4d9  xTCPTimerCheck                                   
+0000a5c1  ADCMSP432E4_open                                 
+0000a6a5  eTaskGetState                                    
+0000a86d  EMACInit                                         
+0000aa31  vTaskSwitchContext                               
+0000ab1d  ulPortGetIPSR                                    
+0000ab35  xPortPendSVHandler                               
+0000ab95  vPortSVCHandler                                  
+0000abb5  vPortStartFirstTask                              
+0000abd9  vPortEnableVFP                                   
+0000ada1  vARPGenerateRequestPacket                        
+0000af4d  xTaskPriorityInherit                             
+0000b021  uxStreamBufferGet                                
+0000b1c9  xPortStartScheduler                              
+0000b299  FreeRTOS_bind                                    
+0000b369  xTaskPriorityDisinherit                          
+0000b5d1  vTaskGetRunTimeStatsLocal                        
+0000b699  setup_wired_ethernet                             
+0000b825  ulTaskGenericNotifyTake                          
+0000b8e9  FreeRTOS_listen                                  
+0000bb29  UARTMSP432E4_close                               
+0000be1d  vTaskGetInfo                                     
+0000bf99  xTCPSocketCheck                                  
+0000c115  ADCMSP432E4_convert                              
+0000c289  xQueueGenericReset                               
+0000c341  vCreateTCPServerSocketWeb                        
+0000c3f9  lTCPAddRxdata                                    
+0000c569  xTCPWindowTxHasData                              
+0000c6d5  xTaskCheckForTimeOut                             
+0000cbb1  GPIO_init                                        
+0000cd0d  vTaskRemoveFromUnorderedEventList                
+0000cdb9  eConsiderFrameForProcessing                      
+0000d1b9  vPortFree                                        
+0000d261  xQueueGenericCreate                              
+0000d309  xTaskRemoveFromEventList                         
+0000d457  GPIOIntTypeSet                                   
+0000d501  vTCPWindowInit                                   
+0000d5a9  vSocketClose                                     
+0000d64d  ClockP_create                                    
+0000d6ed  UARTMSP432E4_readPolling                         
+0000d8c5  __aeabi_memcpy                                   
+0000d8c5  __aeabi_memcpy4                                  
+0000d8c5  __aeabi_memcpy8                                  
+0000d8c5  memcpy                                           
+0000d961  vTaskResume                                      
+0000d9fd  vTaskStartScheduler                              
+0000db33  UARTMSP432E4_write                               
+0000dbd1  xNetworkInterfaceOutput                          
+0000dcff  __aeabi_uldivmod                                 
+0000dd99  pxTCPSocketLookup                                
+0000dec1  xSendEventStructToIPTask                         
+0000e083  UARTMSP432E4_control                             
+0000e239  FreeRTOS_CLIRegisterCommand                      
+0000e2c5  SysCtlPeripheralReset                            
+0000e591  xTCPCheckNewClient                               
+0000e6b1  FreeRTOS_OutputARPRequest                        
+0000e849  __aeabi_cdcmpeq                                  
+0000e849  __aeabi_cdcmple                                  
+0000e8cf  __aeabi_cdrcmple                                 
+0000e959  vPublicSetupFreeRTOSTasks                        
+0000e9e1  get_unix_time_from_ntp                           
+0000ea69  vReturnEthernetFrame                             
+0000eaed  xTimerGenericCommand                             
+0000ebf5  IntDisable                                       
+0000ec75  IntEnable                                        
+0000eef9  ntp_timestamp_to_unix_timestamp                  
+0000f071  printNetworkTime                                 
+0000f0ed  __aeabi_memclr                                   
+0000f0ed  __aeabi_memclr4                                  
+0000f0ed  __aeabi_memclr8                                  
+0000f0ef  __aeabi_memset                                   
+0000f0ef  __aeabi_memset4                                  
+0000f0ef  __aeabi_memset8                                  
+0000f0f5  memset                                           
+0000f167  xTaskCreate                                      
+0000f2d1  UARTConfigSetExpClk                              
+0000f431  vPortValidateInterruptPriority                   
+0000f6f1  vTCPWindowCreate                                 
+0000f7cf  __aeabi_ldivmod                                  
+0000f841  trimwhitespace                                   
+0000f8b1  vReleaseNetworkBufferAndDescriptor               
+0000f921  EMACPHYConfigSet                                 
+0000f98d  Power_releaseDependency                          
+0000f9f9  asctime                                          
+0000fa69  vTCPWindowDestroy                                
+0000fad5  GPIO_hwiIntFxn                                   
+0000fb3d  Power_setDependency                              
+0000fba5  __TI_decompress_lzss                             
+0000fd49  FreeRTOS_shutdown                                
+0000fe7f  vListInsert                                      
+0000fee5  ClockP_stop                                      
+0000ff49  Power_init                                       
+0000ffad  frexp                                            
+0000ffad  frexpl                                           
+0001013d  vTaskPlaceOnUnorderedEventList                   
+000101a1  ADCMSP432E4_close                                
+00010201  HwiP_create                                      
+00010321  pxPortInitialiseStack                            
+000103e1  EMACIntEnable                                    
+000104a1  vSocketWakeUpUser                                
+000104ff  xEventGroupClearBits                             
+0001055d  EMACAddrSet                                      
+000105b9  EMACIntStatus                                    
+00010615  GPIODirModeSet                                   
+00010671  IntRegister                                      
+00010729  vQueueWaitForMessageRestricted                   
+00010789  vSetMultiCastIPv4MacAddress                      
+000107e5  vTaskDelay                                       
+0001095b  ADCIntStatus                                     
+000109b3  EMACIntClear                                     
+00010a11  FreeRTOS_GetAddressConfiguration                 
+00010a69  GPIO_setCallback                                 
+00010ac1  setup_uart_debug                                 
+00010b19  vPortSetupTimerInterrupt                         
+00010b71  xQueueCreateCountingSemaphore                    
+00010c79  pxUDPSocketLookup                                
+00010ccf  vEventGroupDelete                                
+00010d25  ADCMSP432E4_init                                 
+00010d79  ClockP_delete                                    
+00010dcd  GPIO_write                                       
+00010e21  IntPrioritySet                                   
+00010e75  __TI_ltoa                                        
+00010f1d  xTimerCreateTimerTask                            
+00010fc9  ntohll                                           
+0001106d  ADCSequenceConfigure                             
+000110bd  EMACConfigSet                                    
+00011201  obtain_rand32                                    
+0001129f  EMACPHYRead                                      
+000112eb  UARTMSP432E4_writePolling                        
+00011339  atoi                                             
+00011421  pxDuplicateNetworkBufferWithDescriptor           
+000114b9  snprintf                                         
+00011505  vPortEnterCritical                               
+00011551  vTaskSetThreadLocalStoragePointer                
+000115ed  HwiP_dispatch                                    
+00011635  UARTMSP432E4_writeCancel                         
+0001167d  __aeabi_d2iz                                     
+000116c5  uxListRemove                                     
+00011759  RingBuf_put                                      
+000117e9  ulTCPWindowTxSack                                
+00011831  xIsIPv4Multicast                                 
+00011879  ADC_init                                         
+000118c1  FreeRTOS_closesocket                             
+00011909  FreeRTOS_tx_space                                
+0001194d  GPIOPinConfigure                                 
+00011991  SysCtlPeripheralPresent                          
+000119d5  SysCtlPeripheralReady                            
+00011a19  UART_init                                        
+00011aa1  __TI_auto_init_nobinit_nopinit                   
+00011bb5  ADCSequenceDataGet                               
+00011bf7  EMACAddrFilterSet                                
+00011c39  setup_ident                                      
+00011c7d  ADC_open                                         
+00011cbd  RingBuf_get                                      
+00011cfd  SysCtlPeripheralDisable                          
+00011d3d  SysCtlPeripheralEnable                           
+00011d7d  SysCtlPeripheralPowerOff                         
+00011dbd  SysCtlPeripheralPowerOn                          
+00011dfd  SysCtlPeripheralSleepDisable                     
+00011e3d  SysCtlPeripheralSleepEnable                      
+00011e7d  UARTMSP432E4_read                                
+00011ebd  UART_open                                        
+00011efd  __aeabi_errno_addr                               
+00012001  vTaskPlaceOnEventListRestricted                  
+00012041  vsnprintf                                        
+00012081  ClockP_callbackFxn                               
+00012101  xTCPWindowRxEmpty                                
+00012141  FreeRTOS_rx_size                                 
+00012181  FreeRTOS_tx_size                                 
+000121f9  pvTaskGetThreadLocalStoragePointer               
+00012235  vListInsertEnd                                   
+00012271  vTaskSetTimeOutState                             
+000122ed  xTimerCreate                                     
+00012329  get_ctime_from_ntp                               
+000123a9  vGetInternalNetworkInterfaceMSP432EConfigDefaults
+00012459  vConvertOctetsToAddr                             
+000124c9  Board_init                                       
+00012501  FreeRTOS_NetworkDown                             
+00012539  FreeRTOS_inet_ntop4                              
+00012571  FreeRTOS_inet_ntop                               
+000125a7  UARTMSP432E4_readCancel                          
+00012613  strncpy                                          
+00012649  ulDNSHandlePacket                                
+000126ef  SemaphoreP_pend                                  
+00012725  _c_int00_noargs                                  
+00012791  setup_adc_rand                                   
+000127c9  setup_console                                    
+000128a9  vIPSetDHCPTimerEnableState                       
+000128dd  vTaskPlaceOnEventList                            
+00012911  get_delay_dispersion                             
+00012949  read_debug_uart                                  
+00012981  setup_clocks                                     
+000129b9  ulTCPWindowTxAck                                 
+00012a93  GPIOMSP432E4_undoPinConfig                       
+00012ac5  UARTDisable                                      
+00012b59  check_delay_dispersion                           
+00012be9  ulNBNSHandlePacket                               
+00012c19  vListInitialise                                  
+00012c49  vPortExitCritical                                
+00012c79  xTaskGetSchedulerState                           
+00012ca9  setup_web                                        
+00012cd9  get_rand_adc_output                              
+00012d35  pvTimerGetTimerID                                
+00012d63  __aeabi_i2d                                      
+00012d91  vLoggingPrintf                                   
+00012dc1  HwiP_disable                                     
+00012ded  SemaphoreP_createBinary                          
+00012e19  SysCtlPeripheralClockGating                      
+00012e49  printInfo                                        
+00012e75  strncmp                                          
+00012ea1  xApplicationGetRandomNumber                      
+00012ecd  xPortSysTickHandler                              
+00012ef9  xQueueCreateMutex                                
+00012f7d  uxQueueMessagesWaiting                           
+00012fd5  ADCProcessorTrigger                              
+00012ffd  FlashUserGet                                     
+00013025  HwiP_inISR                                       
+00013051  cli_command_register                             
+000130a1  memmove                                          
+000130c9  uxTaskResetEventItemValue                        
+000130f1  main                                             
+00013119  printTasks                                       
+00013191  vApplicationStackOverflowHook                    
+000131b9  vIPNetworkUpCalls                                
+000131e1  vPublicSetupDeviceName                           
+00013209  xIsDHCPSocket                                    
+00013231  xSendDHCPEvent                                   
+00013259  xSendEventToIPTask                               
+0001327f  GPIOPinTypeADC                                   
+000132a3  GPIOPinTypeUART                                  
+000132c7  UARTCharPutNonBlocking                           
+000132eb  UARTEnable                                       
+0001330f  memcmp                                           
+00013359  setup_hardware                                   
+0001337d  vQueueDelete                                     
+000133c5  vTaskInternalSetTimeOutState                     
+00013439  setup_tasks                                      
+0001345d  EMACReset                                        
+0001347f  EMACRxEnable                                     
+000134a1  EMACTxEnable                                     
+000134c3  GPIOIntStatus                                    
+000134e5  SemaphoreP_post                                  
+00013509  ulApplicationGetNextSequenceNumber               
+00013671  vApplicationMallocFailedHook                     
+000136c1  xIsCallingFromIPTask                             
+00013735  ClockP_getCpuFreq                                
+00013755  EMACFrameFilterSet                               
+00013775  GPIOPinWrite                                     
+00013795  HwiP_restore                                     
+000137b5  RingBuf_peek                                     
+00013815  xEventGroupCreate                                
+00013859  ClockP_start                                     
+00013879  FreeRTOS_dnslookup                               
+000138b7  HwiP_Params_init                                 
+000138d5  UARTBusy                                         
+000138f3  UARTCharPut                                      
+00013911  UARTCharsAvail                                   
+0001392f  UARTIntStatus                                    
+00013951  print_debug                                      
+00013971  set_ident_name                                   
+00013991  string_comp                                      
+000139b1  ADCMSP432E4_convertToMicroVolts                  
+000139cd  ClockP_Params_init                               
+00013a05  IntUnregister                                    
+00013a21  UARTCharGetNonBlocking                           
+00013a3d  UARTFlowControlSet                               
+00013a59  UARTTxIntModeSet                                 
+00013a75  memccpy                                          
+00013aad  pvTaskIncrementMutexHeldCount                    
+00013ac9  vNetworkSocketsInit                              
+00013ae9  vPublicGetMACAddr                                
+00013b09  xApplicationDNSQueryHook                         
+00013b25  ADCSequenceDisable                               
+00013b3f  ADCSequenceEnable                                
+00013b59  FreeRTOS_inet_addr                               
+00013c73  PTLS_taskDeleteHook                              
+00013c8d  copysign                                         
+00013c8d  copysignl                                        
+00013ca9  print_debug_char                                 
+00013cfb  ADCIntDisableEx                                  
+00013d15  Power_idleFunc                                   
+00013d2d  UARTFIFOLevelSet                                 
+00013d45  UARTIntDisable                                   
+00013d5d  UARTIntEnable                                    
+00013d75  UART_Params_init                                 
+00013dbd  localProgramStart                                
+00013dd5  __aeabi_lmul                                     
+00013ded  strcmp                                           
+00013e39  xTCPWindowTxDone                                 
+00013e51  ADCIntClear                                      
+00013e67  ClockP_setTimeout                                
+00013e7d  EMACIntRegister                                  
+00013e93  PTLS_getBuf                                      
+00013ea9  PTLS_setBuf                                      
+00013ebf  UARTCharGet                                      
+00013ed5  strchr                                           
+00013ef1  vARPSendGratuitous                               
+00013f09  vReleaseNetworkBuffer                            
+00013f21  xNetworkInterfaceInitialise                      
+00013f37  EMACRxDMADescriptorListSet                       
+00013f4b  EMACTxDMADescriptorListSet                       
+00013f61  FreeRTOS_ClearARP                                
+00013f75  GPIOIntClear                                     
+00013f89  GPIOMSP432E4_getGpioBaseAddr                     
+00013f9d  GPIOMSP432E4_getPowerResourceId                  
+00013fb1  pcApplicationHostnameHook                        
+00013fd9  strcpy                                           
+00013fed  strlen                                           
+00014001  vIPReloadDHCPTimer                               
+00014015  xTaskGetCurrentTaskHandle                        
+00014029  xTaskGetTickCount                                
+0001403d  EMACTxDMAPollDemand                              
+0001404f  HwiP_delete                                      
+00014061  RingBuf_construct                                
+00014073  UARTIntClear                                     
+00014085  UARTRxErrorGet                                   
+00014099  resetISR                                         
+000140a4  resetVectorAddr                                  
+000140ab  wcslen                                           
+000140c1  FreeRTOS_ReleaseUDPPayloadBuffer                 
+000140d1  IntMasterEnable                                  
+000140e1  PowerMSP432E4_sleepPolicy                        
+000140f1  UARTRxErrorClear                                 
+00014101  isspace                                          
+00014131  setup_gpio                                       
+00014151  vListInitialiseItem                              
+00014161  vTaskSuspendAll                                  
+00014171  print_prompt                                     
+00014181  EMACStatusGet                                    
+0001418f  RingBuf_isFull                                   
+0001419d  __TI_decompress_none                             
+000141d1  pxUDPPayloadBuffer_to_NetworkBuffer              
+000141ef  CPUcpsie                                         
+00014201  FreeRTOS_IsNetworkUp                             
+00014211  FreeRTOS_gethostbyname                           
+0001421d  SemaphoreP_delete                                
+00014229  __TI_zero_init                                   
+00014239  eGetDHCPState                                    
+00014249  get_timestring                                   
+00014259  led_off                                          
+00014269  led_on                                           
+00014289  start_blink_task                                 
+00014295  uxTaskGetNumberOfTasks                           
+000144bd  vTaskMissedYield                                 
+000144c9  xIPIsNetworkTaskReady                            
+000144d5  ADC_Params_init                                  
+000144df  ADC_convert                                      
+000144e9  UART_read                                        
+000144f3  UART_writePolling                                
+00014501  pingReply                                        
+0001450b  vPortSuppressTicksAndSleep                       
+00014529  Board_initHook                                   
+000146dc  _ctypes_                                         
+00014b40  UARTMSP432E4_fxnTable                            
+00014bb8  UART_defaultParams                               
+00014c38  ADCMSP432E4_fxnTable                             
+00014c68  GPIOMSP432E4_config                              
+00014ccc  ADCMSP432E4HWAttrs                               
+00014d2c  ADC_config                                       
+00014d38  UART_config                                      
+00014d58  ADC_defaultParams                                
+00014d60  PowerMSP432E4_config                             
+00014d70  ulMaxSyscallInterruptPriority                    
+00014d9d  xBroadcastMACAddress                             
+00014da3  xLLMNR_MacAdress                                 
+00014da9  CONFIG_ADC_0_CONST                               
+00014daa  ADC_count                                        
+00014dab  CONFIG_GPIO_LED_0_CONST                          
+00014dac  CONFIG_UART_0_CONST                              
+00014dad  UART_count                                       
+00014db4  xBufferAllocFixedSize                            
+00014db8  uxTopUsedPriority                                
+00014dc0  __TI_static_base__                               
+00014ee0  __TI_Handler_Table_Base                          
+00014eec  __TI_Handler_Table_Limit                         
+00014f00  __TI_CINIT_Base                                  
+00014f18  __TI_CINIT_Limit                                 
+20000000  __start___llvm_prf_cnts                          
+20000000  __stop___llvm_prf_cnts                           
+20000000  g_pfnRAMVectors                                  
+2002c26c  ucg_ppui8RxBuffer                                
+200306dc  g_psRxDescriptor                                 
+200307dc  g_psTxDescriptor                                 
+20030aa4  uartMSP432E4Objects                              
+20030cdc  xBoundTCPSocketsList                             
+20030cf0  xBoundUDPSocketsList                             
+20030d14  ad                                               
+20030d50  ADCMSP432E4Objects                               
+20030d54  md                                               
+20030d58  ud                                               
+20030d5c  ulg_ui32RxDescIndex                              
+20030d60  ulg_ui32TxDescIndex                              
+20030d64  xQueueRX                                         
+20030d68  xQueueTX                                         
+20030d6c  HwiP_dispatchTable                               
+2003156c  PowerMSP432E4_module                             
+200316d8  pxCurrentTCB                                     
+2003170c  xNetworkEventQueue                               
+20031710  usPacketIdentifier                               
+20031728  xTaskToNotifyEthernetRX                          
+2003172c  xTaskToNotifyEthernetTX                          
+20031730  xHandleCheckLinkUpOrDown                         
+20031734  xHandleCheckNet                                  
+20031774  xDefaultPartUDPPacketHeader                      
+2003178c  xDefaultAddressing                               
+200317a0  xNetworkAddressing                               
+200317dc  xTCPWindowLoggingLevel                           
+2003181c  gpioCallbackFunctions                            
+20031820  gpioPinConfigs                                   
+2003fc00  __stack                                          
+20040000  __STACK_END                                      
+ffffffff  __TI_pprof_out_hndl                              
+ffffffff  __TI_prof_data_size                              
+ffffffff  __TI_prof_data_start                             
+ffffffff  __binit__                                        
+ffffffff  __c_args__                                       
+ffffffff  binit                                            
+UNDEFED   __mpu_init                                       
+UNDEFED   _system_post_cinit                               
+
+[494 symbols]
